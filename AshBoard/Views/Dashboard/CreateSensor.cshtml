@@ -1,0 +1,23 @@
+﻿@model AshBoard.Application.DTOs.Sensor.CreateSensorDto
+@{
+    ViewData["Title"] = "Criar Sensor";
+}
+
+<h2>Novo Sensor</h2>
+
+<form asp-action="CreateSensor" method="post">
+    <div class="form-group">
+        <label>Nome</label>
+        <input asp-for="Nome" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Latitude</label>
+        <input asp-for="Latitude" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Longitude</label>
+        <input asp-for="Longitude" class="form-control" />
+    </div>
+    <br />
+    <button class="btn btn-success" type="submit">Salvar</button>
+</form>

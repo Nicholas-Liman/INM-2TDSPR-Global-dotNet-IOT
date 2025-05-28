@@ -1,5 +1,7 @@
 ﻿using AshBoard.Application.Interfaces;
+using AshBoard.Application.Repositories;
 using AshBoard.Data.AppData;
+using AshBoard.Infrastructure.Repositories;
 using AshBoard.Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
@@ -15,10 +17,15 @@ builder.Services.AddScoped<ISensorService, SensorService>();
 builder.Services.AddScoped<IArraySensorService, ArraySensorService>();
 builder.Services.AddScoped<IAlertaService, AlertaService>();
 
-// Configuração dos controllers
-builder.Services.AddControllers();
+// Registro dos repositórios da aplicação
+builder.Services.AddScoped<ISensorRepository, SensorRepository>();
+builder.Services.AddScoped<IArraySensorRepository, ArraySensorRepository>();
+builder.Services.AddScoped<IAlertaRepository, AlertaRepository>();
 
-// Configuração do Swagger com suporte a anotações
+// Suporte a Razor Views para o dashboard
+builder.Services.AddControllersWithViews();
+
+// Configuração do Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -45,8 +52,19 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+// Habilita o uso de arquivos estáticos, como CSS e JS para as views Razor
+app.UseStaticFiles();
+
+app.UseRouting();
+
 app.UseAuthorization();
 
+// Rota padrão para o Dashboard com Razor Views
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Dashboard}/{action=Index}/{id?}");
+
+// Mapeia os controllers da API REST
 app.MapControllers();
 
 app.Run();

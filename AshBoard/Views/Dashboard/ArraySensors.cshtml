@@ -1,0 +1,26 @@
+﻿@model List<AshBoard.Application.DTOs.ArraySensor.ArraySensorDto>
+@{
+    ViewData["Title"] = "Array de Sensores";
+}
+
+<h2>Arrays de Sensores</h2>
+
+@foreach (var array in Model)
+{
+    <div class="card mb-3">
+        <div class="card-header">
+            Array ID: @array.Id
+        </div>
+        <ul class="list-group list-group-flush">
+            @foreach (var sensor in array.Sensores)
+            {
+                <li class="list-group-item">
+                    <strong>@sensor.Nome</strong><br />
+                    Temp: @sensor.Temperatura °C<br />
+                    Carbono: @sensor.Carbono %<br />
+                    Direção do Vento: @sensor.DirecaoVento
+                </li>
+            }
+        </ul>
+    </div>
+}

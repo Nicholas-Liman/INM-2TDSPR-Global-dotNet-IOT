@@ -1,102 +1,84 @@
 ﻿using AshBoard.Application.DTOs.ArraySensor;
 using AshBoard.Application.Interfaces;
-using AshBoard.Data.AppData;
+using AshBoard.Application.Repositories;
 using AshBoard.Domain.Entities;
-using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace AshBoard.Infrastructure.Services
 {
     public class ArraySensorService : IArraySensorService
     {
-        private readonly AshBoardDbContext _context;
+        private readonly IArraySensorRepository _arraySensorRepository;
 
-        public ArraySensorService(AshBoardDbContext context)
+        public ArraySensorService(IArraySensorRepository arraySensorRepository)
         {
-            _context = context;
-        }
-
-        public async Task<ArraySensorDto> CreateAsync(CreateArraySensorDto dto)
-        {
-            if (string.IsNullOrWhiteSpace(dto.NomeLocal) || dto.NomeLocal.Length > 50)
-                throw new ArgumentException("NomeLocal é obrigatório e deve ter até 50 caracteres.");
-
-            var array = new ArraySensor
-            {
-                NomeLocal = dto.NomeLocal
-            };
-
-            _context.ArraysSensores.Add(array);
-            await _context.SaveChangesAsync();
-
-            return new ArraySensorDto
-            {
-                Id = array.Id,
-                NomeLocal = array.NomeLocal,
-                SensoresIds = new()
-            };
+            _arraySensorRepository = arraySensorRepository;
         }
 
         public async Task<List<ArraySensorDto>> GetAllAsync()
         {
-            return await _context.ArraysSensores
-                .Include(a => a.Sensores)
-                .Select(a => new ArraySensorDto
+            var arrays = await _arraySensorRepository.GetAllAsync();
+
+            return arrays.Select(array => new ArraySensorDto
+            {
+                Id = array.Id,
+                Nome = array.Nome,
+                Sensores = array.Sensores?.Select(sensor => new SensorLeituraDto
                 {
-                    Id = a.Id,
-                    NomeLocal = a.NomeLocal,
-                    SensoresIds = a.Sensores.Select(s => s.Id).ToList()
-                })
-                .ToListAsync();
+                    Id = sensor.Id,
+                    Nome = sensor.Nome,
+                    Temperatura = sensor.Temperatura,
+                    Carbono = sensor.Carbono,
+                    DirecaoVento = sensor.DirecaoVento
+                }).ToList()
+            }).ToList();
         }
 
-        public async Task<ArraySensorDto?> GetByIdAsync(int id)
+        public async Task<ArraySensorDto> GetByIdAsync(int id)
         {
-            var array = await _context.ArraysSensores
-                .Include(a => a.Sensores)
-                .FirstOrDefaultAsync(a => a.Id == id);
-
+            var array = await _arraySensorRepository.GetByIdAsync(id);
             if (array == null) return null;
 
             return new ArraySensorDto
             {
                 Id = array.Id,
-                NomeLocal = array.NomeLocal,
-                SensoresIds = array.Sensores.Select(s => s.Id).ToList()
+                Nome = array.Nome,
+                Sensores = array.Sensores?.Select(sensor => new SensorLeituraDto
+                {
+                    Id = sensor.Id,
+                    Nome = sensor.Nome,
+                    Temperatura = sensor.Temperatura,
+                    Carbono = sensor.Carbono,
+                    DirecaoVento = sensor.DirecaoVento
+                }).ToList()
             };
         }
 
-        public async Task<bool> UpdateAsync(int id, UpdateArraySensorDto dto)
+        public async Task CreateAsync(CreateArraySensorDto dto)
         {
-            var array = await _context.ArraysSensores.FindAsync(id);
-            if (array == null) return false;
+            var array = new ArraySensorEntity
+            {
+                Nome = dto.Nome
+                // Associe sensores aqui se necessário
+            };
 
-            if (string.IsNullOrWhiteSpace(dto.NomeLocal) || dto.NomeLocal.Length > 50)
-                throw new ArgumentException("NomeLocal é obrigatório e deve ter até 50 caracteres.");
-
-            array.NomeLocal = dto.NomeLocal;
-            await _context.SaveChangesAsync();
-
-            return true;
+            await _arraySensorRepository.CreateAsync(array);
         }
 
-        public async Task<bool> DeleteAsync(int id)
+        public async Task UpdateAsync(int id, UpdateArraySensorDto dto)
         {
-            var array = await _context.ArraysSensores
-                .Include(a => a.Sensores)
-                .FirstOrDefaultAsync(a => a.Id == id);
+            var existing = await _arraySensorRepository.GetByIdAsync(id);
+            if (existing == null) return;
 
-            if (array == null) return false;
+            existing.Nome = dto.Nome;
+            await _arraySensorRepository.UpdateAsync(existing);
+        }
 
-            // Desassociar sensores (opcional, mas previne erro se houver FK)
-            foreach (var sensor in array.Sensores)
-            {
-                sensor.ArraySensorId = null;
-            }
-
-            _context.ArraysSensores.Remove(array);
-            await _context.SaveChangesAsync();
-
-            return true;
+        public async Task DeleteAsync(int id)
+        {
+            await _arraySensorRepository.DeleteAsync(id);
         }
     }
 }

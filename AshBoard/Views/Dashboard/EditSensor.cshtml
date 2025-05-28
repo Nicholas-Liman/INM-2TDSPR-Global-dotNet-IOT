@@ -1,0 +1,24 @@
+﻿@model AshBoard.Application.DTOs.Sensor.SensorDto
+@{
+    ViewData["Title"] = "Editar Sensor";
+}
+
+<h2>Editar Sensor</h2>
+
+<form asp-action="EditSensor" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label>Nome</label>
+        <input asp-for="Nome" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Latitude</label>
+        <input asp-for="Latitude" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Longitude</label>
+        <input asp-for="Longitude" class="form-control" />
+    </div>
+    <br />
+    <button class="btn btn-primary" type="submit">Salvar</button>
+</form>

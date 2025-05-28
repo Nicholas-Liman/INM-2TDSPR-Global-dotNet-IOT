@@ -1,0 +1,34 @@
+﻿@model List<AshBoard.Application.DTOs.Sensor.SensorDto>
+@{
+    ViewData["Title"] = "Sensores";
+}
+
+<h2>Lista de Sensores</h2>
+<a class="btn btn-primary mb-2" href="/Dashboard/CreateSensor">Novo Sensor</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var s in Model)
+        {
+            <tr>
+                <td>@s.Id</td>
+                <td>@s.Nome</td>
+                <td>@s.Latitude</td>
+                <td>@s.Longitude</td>
+                <td>
+                    <a class="btn btn-sm btn-warning" href="/Dashboard/EditSensor/@s.Id">Editar</a>
+                    <a class="btn btn-sm btn-danger" href="/Dashboard/DeleteSensor/@s.Id">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

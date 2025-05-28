@@ -1,115 +1,70 @@
 ﻿using AshBoard.Application.DTOs.Alerta;
+using AshBoard.Application.Repositories;
 using AshBoard.Application.Interfaces;
-using AshBoard.Data.AppData;
 using AshBoard.Domain.Entities;
-using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace AshBoard.Infrastructure.Services
 {
     public class AlertaService : IAlertaService
     {
-        private readonly AshBoardDbContext _context;
+        private readonly IAlertaRepository _alertaRepository;
 
-        public AlertaService(AshBoardDbContext context)
+        public AlertaService(IAlertaRepository alertaRepository)
         {
-            _context = context;
-        }
-
-        public async Task<AlertaDto> CreateAsync(CreateAlertaDto dto)
-        {
-            if (string.IsNullOrWhiteSpace(dto.NomeLocal) || dto.NomeLocal.Length > 50)
-                throw new ArgumentException("NomeLocal é obrigatório e deve ter até 50 caracteres.");
-
-            var sensor = await _context.Sensores.FindAsync(dto.SensorId);
-            if (sensor == null)
-                throw new ArgumentException("Sensor associado não encontrado.");
-
-            var alerta = new Alerta
-            {
-                DataHoraColeta = dto.DataHoraColeta,
-                NomeLocal = dto.NomeLocal,
-                Latitude = dto.Latitude,
-                Longitude = dto.Longitude,
-                Evento = dto.Evento,
-                Gravidade = dto.Gravidade,
-                IncendioProximo = dto.IncendioProximo,
-                SensorId = dto.SensorId
-            };
-
-            _context.Alertas.Add(alerta);
-            await _context.SaveChangesAsync();
-
-            return new AlertaDto
-            {
-                Id = alerta.Id,
-                DataHoraColeta = alerta.DataHoraColeta,
-                NomeLocal = alerta.NomeLocal,
-                Latitude = alerta.Latitude,
-                Longitude = alerta.Longitude,
-                Evento = alerta.Evento,
-                Gravidade = alerta.Gravidade,
-                IncendioProximo = alerta.IncendioProximo,
-                SensorId = alerta.SensorId
-            };
+            _alertaRepository = alertaRepository;
         }
 
         public async Task<List<AlertaDto>> GetAllAsync()
         {
-            return await _context.Alertas
-                .Select(a => new AlertaDto
-                {
-                    Id = a.Id,
-                    DataHoraColeta = a.DataHoraColeta,
-                    NomeLocal = a.NomeLocal,
-                    Latitude = a.Latitude,
-                    Longitude = a.Longitude,
-                    Evento = a.Evento,
-                    Gravidade = a.Gravidade,
-                    IncendioProximo = a.IncendioProximo,
-                    SensorId = a.SensorId
-                })
-                .ToListAsync();
+            var alertas = await _alertaRepository.GetAllAsync();
+            return alertas.Select(a => new AlertaDto
+            {
+                Id = a.Id,
+                Nivel = a.Nivel,
+                Mensagem = a.Mensagem
+            }).ToList();
         }
 
-        public async Task<AlertaDto?> GetByIdAsync(int id)
+        public async Task<AlertaDto> GetByIdAsync(int id)
         {
-            var alerta = await _context.Alertas.FindAsync(id);
-            if (alerta == null) return null;
+            var a = await _alertaRepository.GetByIdAsync(id);
+            if (a == null) return null;
 
             return new AlertaDto
             {
-                Id = alerta.Id,
-                DataHoraColeta = alerta.DataHoraColeta,
-                NomeLocal = alerta.NomeLocal,
-                Latitude = alerta.Latitude,
-                Longitude = alerta.Longitude,
-                Evento = alerta.Evento,
-                Gravidade = alerta.Gravidade,
-                IncendioProximo = alerta.IncendioProximo,
-                SensorId = alerta.SensorId
+                Id = a.Id,
+                Nivel = a.Nivel,
+                Mensagem = a.Mensagem
             };
         }
 
-        public async Task<bool> UpdateAsync(int id, UpdateAlertaDto dto)
+        public async Task CreateAsync(CreateAlertaDto dto)
         {
-            var alerta = await _context.Alertas.FindAsync(id);
-            if (alerta == null) return false;
-
-            alerta.Gravidade = dto.Gravidade;
-            alerta.IncendioProximo = dto.IncendioProximo;
-
-            await _context.SaveChangesAsync();
-            return true;
+            var entity = new AlertaEntity
+            {
+                Nivel = dto.Nivel,
+                Mensagem = dto.Mensagem
+            };
+            await _alertaRepository.CreateAsync(entity);
         }
 
-        public async Task<bool> DeleteAsync(int id)
+        public async Task UpdateAsync(int id, UpdateAlertaDto dto)
         {
-            var alerta = await _context.Alertas.FindAsync(id);
-            if (alerta == null) return false;
+            var alerta = await _alertaRepository.GetByIdAsync(id);
+            if (alerta == null) return;
 
-            _context.Alertas.Remove(alerta);
-            await _context.SaveChangesAsync();
-            return true;
+            alerta.Nivel = dto.Nivel;
+            alerta.Mensagem = dto.Mensagem;
+
+            await _alertaRepository.UpdateAsync(alerta);
+        }
+
+        public async Task DeleteAsync(int id)
+        {
+            await _alertaRepository.DeleteAsync(id);
         }
     }
 }

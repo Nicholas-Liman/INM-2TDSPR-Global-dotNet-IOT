@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35818.85
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AshBoard", "AshBoard\AshBoard.csproj", "{066B07DF-74B7-49E3-9581-60F9FA854A7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AshBoard", "AshBoard\AshBoard.csproj", "{066B07DF-74B7-49E3-9581-60F9FA854A7A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Presentation", "0 - Presentation", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
@@ -14,17 +14,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Infrastructure", "3 - I
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Tests", "4 - Tests", "{C4A21B55-E7BF-41AC-80F8-43A5F39303BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AshBoard.Application", "AshBoard.Application\AshBoard.Application.csproj", "{7D576198-7CF3-4C40-A4CB-0C2FBE9C6538}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AshBoard.Application", "AshBoard.Application\AshBoard.Application.csproj", "{7D576198-7CF3-4C40-A4CB-0C2FBE9C6538}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AshBoard.Domain", "AshBoard.Domain\AshBoard.Domain.csproj", "{1AD6FE5A-DBDF-4E80-B989-C41657CC359B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AshBoard.Domain", "AshBoard.Domain\AshBoard.Domain.csproj", "{1AD6FE5A-DBDF-4E80-B989-C41657CC359B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AshBoard.Data", "AshBoard.Data\AshBoard.Data.csproj", "{B1B91B0C-1E77-4DC6-9E96-EDCEB0B36C50}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AshBoard.Data", "AshBoard.Data\AshBoard.Data.csproj", "{B1B91B0C-1E77-4DC6-9E96-EDCEB0B36C50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AshBoard.Service", "AshBoard.Service\AshBoard.Service.csproj", "{7DC2D5CF-84AB-4907-8667-7E114295B676}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AshBoard.Service", "AshBoard.Service\AshBoard.Service.csproj", "{7DC2D5CF-84AB-4907-8667-7E114295B676}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AshBoard.Tests", "AshBoard.Tests\AshBoard.Tests.csproj", "{9BB87071-86CD-4634-A003-0654BB3A3B6D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AshBoard.Tests", "AshBoard.Tests\AshBoard.Tests.csproj", "{9BB87071-86CD-4634-A003-0654BB3A3B6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensorEmulator", "SensorEmulator\SensorEmulator.csproj", "{C7086799-5D49-48CB-B772-CBC95EFA5EE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SensorEmulator", "SensorEmulator\SensorEmulator.csproj", "{C7086799-5D49-48CB-B772-CBC95EFA5EE9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
