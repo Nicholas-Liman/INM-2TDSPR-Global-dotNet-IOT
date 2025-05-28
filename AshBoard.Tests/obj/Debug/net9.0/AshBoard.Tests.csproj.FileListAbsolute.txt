@@ -1,0 +1,15 @@
+C:\Users\Nicho\Source\Repos\INM-2TDSPR-Global-dotNet-IOT\AshBoard.Tests\bin\Debug\net9.0\AshBoard.Tests.deps.json
+C:\Users\Nicho\Source\Repos\INM-2TDSPR-Global-dotNet-IOT\AshBoard.Tests\bin\Debug\net9.0\AshBoard.Tests.runtimeconfig.json
+C:\Users\Nicho\Source\Repos\INM-2TDSPR-Global-dotNet-IOT\AshBoard.Tests\bin\Debug\net9.0\AshBoard.Tests.dll
+C:\Users\Nicho\Source\Repos\INM-2TDSPR-Global-dotNet-IOT\AshBoard.Tests\bin\Debug\net9.0\AshBoard.Tests.pdb
+C:\Users\Nicho\Source\Repos\INM-2TDSPR-Global-dotNet-IOT\AshBoard.Tests\obj\Debug\net9.0\AshBoard.Tests.csproj.AssemblyReference.cache
+C:\Users\Nicho\Source\Repos\INM-2TDSPR-Global-dotNet-IOT\AshBoard.Tests\obj\Debug\net9.0\AshBoard.Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nicho\Source\Repos\INM-2TDSPR-Global-dotNet-IOT\AshBoard.Tests\obj\Debug\net9.0\AshBoard.Tests.AssemblyInfoInputs.cache
+C:\Users\Nicho\Source\Repos\INM-2TDSPR-Global-dotNet-IOT\AshBoard.Tests\obj\Debug\net9.0\AshBoard.Tests.AssemblyInfo.cs
+C:\Users\Nicho\Source\Repos\INM-2TDSPR-Global-dotNet-IOT\AshBoard.Tests\obj\Debug\net9.0\AshBoard.Tests.csproj.CoreCompileInputs.cache
+C:\Users\Nicho\Source\Repos\INM-2TDSPR-Global-dotNet-IOT\AshBoard.Tests\obj\Debug\net9.0\AshBoard.Tests.sourcelink.json
+C:\Users\Nicho\Source\Repos\INM-2TDSPR-Global-dotNet-IOT\AshBoard.Tests\obj\Debug\net9.0\AshBoard.Tests.dll
+C:\Users\Nicho\Source\Repos\INM-2TDSPR-Global-dotNet-IOT\AshBoard.Tests\obj\Debug\net9.0\refint\AshBoard.Tests.dll
+C:\Users\Nicho\Source\Repos\INM-2TDSPR-Global-dotNet-IOT\AshBoard.Tests\obj\Debug\net9.0\AshBoard.Tests.pdb
+C:\Users\Nicho\Source\Repos\INM-2TDSPR-Global-dotNet-IOT\AshBoard.Tests\obj\Debug\net9.0\AshBoard.Tests.genruntimeconfig.cache
+C:\Users\Nicho\Source\Repos\INM-2TDSPR-Global-dotNet-IOT\AshBoard.Tests\obj\Debug\net9.0\ref\AshBoard.Tests.dll
