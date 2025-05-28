@@ -1,0 +1,15 @@
+D:\Downloads\INM-2TDSPR-Global-dotNet-IOT\SensorEmulator\bin\Debug\net9.0\SensorEmulator.exe
+D:\Downloads\INM-2TDSPR-Global-dotNet-IOT\SensorEmulator\bin\Debug\net9.0\SensorEmulator.deps.json
+D:\Downloads\INM-2TDSPR-Global-dotNet-IOT\SensorEmulator\bin\Debug\net9.0\SensorEmulator.runtimeconfig.json
+D:\Downloads\INM-2TDSPR-Global-dotNet-IOT\SensorEmulator\bin\Debug\net9.0\SensorEmulator.dll
+D:\Downloads\INM-2TDSPR-Global-dotNet-IOT\SensorEmulator\bin\Debug\net9.0\SensorEmulator.pdb
+D:\Downloads\INM-2TDSPR-Global-dotNet-IOT\SensorEmulator\obj\Debug\net9.0\SensorEmulator.GeneratedMSBuildEditorConfig.editorconfig
+D:\Downloads\INM-2TDSPR-Global-dotNet-IOT\SensorEmulator\obj\Debug\net9.0\SensorEmulator.AssemblyInfoInputs.cache
+D:\Downloads\INM-2TDSPR-Global-dotNet-IOT\SensorEmulator\obj\Debug\net9.0\SensorEmulator.AssemblyInfo.cs
+D:\Downloads\INM-2TDSPR-Global-dotNet-IOT\SensorEmulator\obj\Debug\net9.0\SensorEmulator.csproj.CoreCompileInputs.cache
+D:\Downloads\INM-2TDSPR-Global-dotNet-IOT\SensorEmulator\obj\Debug\net9.0\SensorEmulator.sourcelink.json
+D:\Downloads\INM-2TDSPR-Global-dotNet-IOT\SensorEmulator\obj\Debug\net9.0\SensorEmulator.dll
+D:\Downloads\INM-2TDSPR-Global-dotNet-IOT\SensorEmulator\obj\Debug\net9.0\refint\SensorEmulator.dll
+D:\Downloads\INM-2TDSPR-Global-dotNet-IOT\SensorEmulator\obj\Debug\net9.0\SensorEmulator.pdb
+D:\Downloads\INM-2TDSPR-Global-dotNet-IOT\SensorEmulator\obj\Debug\net9.0\SensorEmulator.genruntimeconfig.cache
+D:\Downloads\INM-2TDSPR-Global-dotNet-IOT\SensorEmulator\obj\Debug\net9.0\ref\SensorEmulator.dll

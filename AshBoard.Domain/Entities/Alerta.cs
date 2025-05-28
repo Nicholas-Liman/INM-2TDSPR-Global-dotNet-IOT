@@ -3,8 +3,7 @@
     public class Alerta
     {
         public int Id { get; set; }
-        public DateTime DataColeta { get; set; }
-        public DateTime HoraColeta { get; set; }
+        public DateTime DataHoraColeta { get; set; }
         public string NomeLocal { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }

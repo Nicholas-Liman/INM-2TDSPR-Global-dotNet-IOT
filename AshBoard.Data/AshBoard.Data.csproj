@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AshBoard.Domain\AshBoard.Domain.csproj" />
     <ProjectReference Include="..\AshBoard.Tests\AshBoard.Tests.csproj" />
   </ItemGroup>
 

@@ -24,6 +24,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AshBoard.Service", "AshBoar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AshBoard.Tests", "AshBoard.Tests\AshBoard.Tests.csproj", "{9BB87071-86CD-4634-A003-0654BB3A3B6D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensorEmulator", "SensorEmulator\SensorEmulator.csproj", "{C7086799-5D49-48CB-B772-CBC95EFA5EE9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +56,10 @@ Global
 		{9BB87071-86CD-4634-A003-0654BB3A3B6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BB87071-86CD-4634-A003-0654BB3A3B6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BB87071-86CD-4634-A003-0654BB3A3B6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7086799-5D49-48CB-B772-CBC95EFA5EE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7086799-5D49-48CB-B772-CBC95EFA5EE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7086799-5D49-48CB-B772-CBC95EFA5EE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7086799-5D49-48CB-B772-CBC95EFA5EE9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

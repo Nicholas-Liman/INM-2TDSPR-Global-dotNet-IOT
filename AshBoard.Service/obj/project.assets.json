@@ -1381,6 +1381,52 @@
           }
         }
       },
+      "AshBoard.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "AshBoard.Tests": "1.0.0",
+          "Microsoft.AspNetCore.OpenApi": "9.0.5",
+          "Microsoft.ML": "4.0.2"
+        },
+        "compile": {
+          "bin/placeholder/AshBoard.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AshBoard.Application.dll": {}
+        }
+      },
+      "AshBoard.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "AshBoard.Domain": "1.0.0",
+          "AshBoard.Tests": "1.0.0",
+          "Microsoft.AspNetCore.OpenApi": "9.0.3",
+          "Microsoft.EntityFrameworkCore": "9.0.3",
+          "Oracle.EntityFrameworkCore": "9.23.60"
+        },
+        "compile": {
+          "bin/placeholder/AshBoard.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AshBoard.Data.dll": {}
+        }
+      },
+      "AshBoard.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "AshBoard.Tests": "1.0.0",
+          "Microsoft.AspNetCore.OpenApi": "9.0.3"
+        },
+        "compile": {
+          "bin/placeholder/AshBoard.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AshBoard.Domain.dll": {}
+        }
+      },
       "AshBoard.Tests/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -3856,6 +3902,21 @@
         "xunit.abstractions.nuspec"
       ]
     },
+    "AshBoard.Application/1.0.0": {
+      "type": "project",
+      "path": "../AshBoard.Application/AshBoard.Application.csproj",
+      "msbuildProject": "../AshBoard.Application/AshBoard.Application.csproj"
+    },
+    "AshBoard.Data/1.0.0": {
+      "type": "project",
+      "path": "../AshBoard.Data/AshBoard.Data.csproj",
+      "msbuildProject": "../AshBoard.Data/AshBoard.Data.csproj"
+    },
+    "AshBoard.Domain/1.0.0": {
+      "type": "project",
+      "path": "../AshBoard.Domain/AshBoard.Domain.csproj",
+      "msbuildProject": "../AshBoard.Domain/AshBoard.Domain.csproj"
+    },
     "AshBoard.Tests/1.0.0": {
       "type": "project",
       "path": "../AshBoard.Tests/AshBoard.Tests.csproj",
@@ -3864,6 +3925,9 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
+      "AshBoard.Application >= 1.0.0",
+      "AshBoard.Data >= 1.0.0",
+      "AshBoard.Domain >= 1.0.0",
       "AshBoard.Tests >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 9.0.5",
       "Microsoft.EntityFrameworkCore >= 9.0.5",
@@ -3879,11 +3943,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nicho\\Source\\Repos\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Service\\AshBoard.Service.csproj",
+      "projectUniqueName": "C:\\Users\\Nicho\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Service\\AshBoard.Service.csproj",
       "projectName": "AshBoard.Service",
-      "projectPath": "C:\\Users\\Nicho\\Source\\Repos\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Service\\AshBoard.Service.csproj",
+      "projectPath": "C:\\Users\\Nicho\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Service\\AshBoard.Service.csproj",
       "packagesPath": "C:\\Users\\Nicho\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nicho\\Source\\Repos\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Service\\obj\\",
+      "outputPath": "C:\\Users\\Nicho\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Service\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3904,8 +3968,17 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\Nicho\\Source\\Repos\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Tests\\AshBoard.Tests.csproj": {
-              "projectPath": "C:\\Users\\Nicho\\Source\\Repos\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Tests\\AshBoard.Tests.csproj"
+            "C:\\Users\\Nicho\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Application\\AshBoard.Application.csproj": {
+              "projectPath": "C:\\Users\\Nicho\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Application\\AshBoard.Application.csproj"
+            },
+            "C:\\Users\\Nicho\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Data\\AshBoard.Data.csproj": {
+              "projectPath": "C:\\Users\\Nicho\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Data\\AshBoard.Data.csproj"
+            },
+            "C:\\Users\\Nicho\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Domain\\AshBoard.Domain.csproj": {
+              "projectPath": "C:\\Users\\Nicho\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Domain\\AshBoard.Domain.csproj"
+            },
+            "C:\\Users\\Nicho\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Tests\\AshBoard.Tests.csproj": {
+              "projectPath": "C:\\Users\\Nicho\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Tests\\AshBoard.Tests.csproj"
             }
           }
         }
