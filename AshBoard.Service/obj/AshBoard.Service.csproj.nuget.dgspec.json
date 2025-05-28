@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Service\\AshBoard.Service.csproj": {}
+    "C:\\Users\\labsfiap\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Service\\AshBoard.Service.csproj": {}
   },
   "projects": {
-    "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Application\\AshBoard.Application.csproj": {
+    "C:\\Users\\labsfiap\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Application\\AshBoard.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Application\\AshBoard.Application.csproj",
+        "projectUniqueName": "C:\\Users\\labsfiap\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Application\\AshBoard.Application.csproj",
         "projectName": "AshBoard.Application",
-        "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Application\\AshBoard.Application.csproj",
-        "packagesPath": "C:\\Users\\Nicho\\.nuget\\packages\\",
-        "outputPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Application\\obj\\",
+        "projectPath": "C:\\Users\\labsfiap\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Application\\AshBoard.Application.csproj",
+        "packagesPath": "C:\\Softwares\\Nuget",
+        "outputPath": "C:\\Users\\labsfiap\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Nicho\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "c:\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,14 +26,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Tests\\AshBoard.Tests.csproj": {
-                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Tests\\AshBoard.Tests.csproj"
+              "C:\\Users\\labsfiap\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Tests\\AshBoard.Tests.csproj": {
+                "projectPath": "C:\\Users\\labsfiap\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Tests\\AshBoard.Tests.csproj"
               }
             }
           }
@@ -47,22 +48,11 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "dependencies": {
-            "Microsoft.AspNetCore.OpenApi": {
-              "target": "Package",
-              "version": "[9.0.5, )"
-            },
-            "Microsoft.ML": {
-              "target": "Package",
-              "version": "[4.0.2, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -74,29 +64,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Data\\AshBoard.Data.csproj": {
+    "C:\\Users\\labsfiap\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Data\\AshBoard.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Data\\AshBoard.Data.csproj",
+        "projectUniqueName": "C:\\Users\\labsfiap\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Data\\AshBoard.Data.csproj",
         "projectName": "AshBoard.Data",
-        "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Data\\AshBoard.Data.csproj",
-        "packagesPath": "C:\\Users\\Nicho\\.nuget\\packages\\",
-        "outputPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Data\\obj\\",
+        "projectPath": "C:\\Users\\labsfiap\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Data\\AshBoard.Data.csproj",
+        "packagesPath": "C:\\Softwares\\Nuget",
+        "outputPath": "C:\\Users\\labsfiap\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Nicho\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "c:\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -105,17 +90,18 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Domain\\AshBoard.Domain.csproj": {
-                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Domain\\AshBoard.Domain.csproj"
+              "C:\\Users\\labsfiap\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Domain\\AshBoard.Domain.csproj": {
+                "projectPath": "C:\\Users\\labsfiap\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Domain\\AshBoard.Domain.csproj"
               },
-              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Tests\\AshBoard.Tests.csproj": {
-                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Tests\\AshBoard.Tests.csproj"
+              "C:\\Users\\labsfiap\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Tests\\AshBoard.Tests.csproj": {
+                "projectPath": "C:\\Users\\labsfiap\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Tests\\AshBoard.Tests.csproj"
               }
             }
           }
@@ -129,32 +115,11 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "dependencies": {
-            "Microsoft.AspNetCore.OpenApi": {
-              "target": "Package",
-              "version": "[9.0.3, )"
-            },
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[9.0.3, )"
-            },
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[9.0.3, )"
-            },
-            "Oracle.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[9.23.60, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -166,29 +131,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Domain\\AshBoard.Domain.csproj": {
+    "C:\\Users\\labsfiap\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Domain\\AshBoard.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Domain\\AshBoard.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\labsfiap\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Domain\\AshBoard.Domain.csproj",
         "projectName": "AshBoard.Domain",
-        "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Domain\\AshBoard.Domain.csproj",
-        "packagesPath": "C:\\Users\\Nicho\\.nuget\\packages\\",
-        "outputPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Domain\\obj\\",
+        "projectPath": "C:\\Users\\labsfiap\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Domain\\AshBoard.Domain.csproj",
+        "packagesPath": "C:\\Softwares\\Nuget",
+        "outputPath": "C:\\Users\\labsfiap\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Nicho\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "c:\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -197,14 +157,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Tests\\AshBoard.Tests.csproj": {
-                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Tests\\AshBoard.Tests.csproj"
+              "C:\\Users\\labsfiap\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Tests\\AshBoard.Tests.csproj": {
+                "projectPath": "C:\\Users\\labsfiap\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Tests\\AshBoard.Tests.csproj"
               }
             }
           }
@@ -218,18 +179,11 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "dependencies": {
-            "Microsoft.AspNetCore.OpenApi": {
-              "target": "Package",
-              "version": "[9.0.3, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -241,29 +195,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Service\\AshBoard.Service.csproj": {
+    "C:\\Users\\labsfiap\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Service\\AshBoard.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Service\\AshBoard.Service.csproj",
+        "projectUniqueName": "C:\\Users\\labsfiap\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Service\\AshBoard.Service.csproj",
         "projectName": "AshBoard.Service",
-        "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Service\\AshBoard.Service.csproj",
-        "packagesPath": "C:\\Users\\Nicho\\.nuget\\packages\\",
-        "outputPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Service\\obj\\",
+        "projectPath": "C:\\Users\\labsfiap\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Service\\AshBoard.Service.csproj",
+        "packagesPath": "C:\\Softwares\\Nuget",
+        "outputPath": "C:\\Users\\labsfiap\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Nicho\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "c:\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -272,23 +221,24 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Application\\AshBoard.Application.csproj": {
-                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Application\\AshBoard.Application.csproj"
+              "C:\\Users\\labsfiap\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Application\\AshBoard.Application.csproj": {
+                "projectPath": "C:\\Users\\labsfiap\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Application\\AshBoard.Application.csproj"
               },
-              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Data\\AshBoard.Data.csproj": {
-                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Data\\AshBoard.Data.csproj"
+              "C:\\Users\\labsfiap\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Data\\AshBoard.Data.csproj": {
+                "projectPath": "C:\\Users\\labsfiap\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Data\\AshBoard.Data.csproj"
               },
-              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Domain\\AshBoard.Domain.csproj": {
-                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Domain\\AshBoard.Domain.csproj"
+              "C:\\Users\\labsfiap\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Domain\\AshBoard.Domain.csproj": {
+                "projectPath": "C:\\Users\\labsfiap\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Domain\\AshBoard.Domain.csproj"
               },
-              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Tests\\AshBoard.Tests.csproj": {
-                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Tests\\AshBoard.Tests.csproj"
+              "C:\\Users\\labsfiap\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Tests\\AshBoard.Tests.csproj": {
+                "projectPath": "C:\\Users\\labsfiap\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Tests\\AshBoard.Tests.csproj"
               }
             }
           }
@@ -302,36 +252,11 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "dependencies": {
-            "Microsoft.AspNetCore.OpenApi": {
-              "target": "Package",
-              "version": "[9.0.5, )"
-            },
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[9.0.5, )"
-            },
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[9.0.5, )"
-            },
-            "Microsoft.ML": {
-              "target": "Package",
-              "version": "[4.0.2, )"
-            },
-            "Oracle.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[9.23.80, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -343,29 +268,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Tests\\AshBoard.Tests.csproj": {
+    "C:\\Users\\labsfiap\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Tests\\AshBoard.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Tests\\AshBoard.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\labsfiap\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Tests\\AshBoard.Tests.csproj",
         "projectName": "AshBoard.Tests",
-        "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Tests\\AshBoard.Tests.csproj",
-        "packagesPath": "C:\\Users\\Nicho\\.nuget\\packages\\",
-        "outputPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Tests\\obj\\",
+        "projectPath": "C:\\Users\\labsfiap\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Tests\\AshBoard.Tests.csproj",
+        "packagesPath": "C:\\Softwares\\Nuget",
+        "outputPath": "C:\\Users\\labsfiap\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Nicho\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "c:\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -374,6 +294,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -391,26 +312,11 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "dependencies": {
-            "Microsoft.EntityFrameworkCore.InMemory": {
-              "target": "Package",
-              "version": "[9.0.5, )"
-            },
-            "Moq": {
-              "target": "Package",
-              "version": "[4.20.72, )"
-            },
-            "xunit.abstractions": {
-              "target": "Package",
-              "version": "[2.0.3, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -422,12 +328,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
