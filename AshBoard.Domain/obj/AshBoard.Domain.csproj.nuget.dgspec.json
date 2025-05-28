@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nicho\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Domain\\AshBoard.Domain.csproj": {}
+    "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Domain\\AshBoard.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nicho\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Domain\\AshBoard.Domain.csproj": {
+    "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Domain\\AshBoard.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nicho\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Domain\\AshBoard.Domain.csproj",
+        "projectUniqueName": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Domain\\AshBoard.Domain.csproj",
         "projectName": "AshBoard.Domain",
-        "projectPath": "C:\\Users\\Nicho\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Domain\\AshBoard.Domain.csproj",
+        "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Domain\\AshBoard.Domain.csproj",
         "packagesPath": "C:\\Users\\Nicho\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nicho\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Domain\\obj\\",
+        "outputPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\Nicho\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Tests\\AshBoard.Tests.csproj": {
-                "projectPath": "C:\\Users\\Nicho\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Tests\\AshBoard.Tests.csproj"
+              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Tests\\AshBoard.Tests.csproj": {
+                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Tests\\AshBoard.Tests.csproj"
               }
             }
           }
@@ -79,14 +79,14 @@
         }
       }
     },
-    "C:\\Users\\Nicho\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Tests\\AshBoard.Tests.csproj": {
+    "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Tests\\AshBoard.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nicho\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Tests\\AshBoard.Tests.csproj",
+        "projectUniqueName": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Tests\\AshBoard.Tests.csproj",
         "projectName": "AshBoard.Tests",
-        "projectPath": "C:\\Users\\Nicho\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Tests\\AshBoard.Tests.csproj",
+        "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Tests\\AshBoard.Tests.csproj",
         "packagesPath": "C:\\Users\\Nicho\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nicho\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Tests\\obj\\",
+        "outputPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT\\AshBoard.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
