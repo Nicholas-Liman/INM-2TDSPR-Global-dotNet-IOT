@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "IOZtFy7/qb0=",
+  "dgSpecHash": "VBGLzJWEItU=",
   "success": true,
   "projectFilePath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Tests\\AshBoard.Tests.csproj",
   "expectedPackageFiles": [
@@ -24,6 +24,7 @@
     "C:\\Users\\Nicho\\.nuget\\packages\\microsoft.ml\\4.0.2\\microsoft.ml.4.0.2.nupkg.sha512",
     "C:\\Users\\Nicho\\.nuget\\packages\\microsoft.ml.cpumath\\4.0.2\\microsoft.ml.cpumath.4.0.2.nupkg.sha512",
     "C:\\Users\\Nicho\\.nuget\\packages\\microsoft.ml.dataview\\4.0.2\\microsoft.ml.dataview.4.0.2.nupkg.sha512",
+    "C:\\Users\\Nicho\\.nuget\\packages\\microsoft.ml.fasttree\\4.0.2\\microsoft.ml.fasttree.4.0.2.nupkg.sha512",
     "C:\\Users\\Nicho\\.nuget\\packages\\microsoft.openapi\\1.6.23\\microsoft.openapi.1.6.23.nupkg.sha512",
     "C:\\Users\\Nicho\\.nuget\\packages\\moq\\4.20.72\\moq.4.20.72.nupkg.sha512",
     "C:\\Users\\Nicho\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",

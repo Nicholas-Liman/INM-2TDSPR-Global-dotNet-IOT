@@ -16,6 +16,7 @@ builder.Services.AddScoped<ISensorService, SensorService>();
 builder.Services.AddScoped<IArraySensorService, ArraySensorService>();
 builder.Services.AddScoped<IAlertaService, AlertaService>();
 builder.Services.AddScoped<ILeituraService, LeituraService>();
+builder.Services.AddScoped<IAlertaMLService, AlertaMLService>();
 
 builder.Services.AddScoped<ISensorRepository, SensorRepository>();
 builder.Services.AddScoped<IArraySensorRepository, ArraySensorRepository>();

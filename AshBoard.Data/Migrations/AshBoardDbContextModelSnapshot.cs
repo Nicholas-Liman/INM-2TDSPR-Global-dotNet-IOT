@@ -51,6 +51,9 @@ namespace AshBoard.Data.Migrations
                         .IsRequired()
                         .HasColumnType("NVARCHAR2(2000)");
 
+                    b.Property<string>("Observacao")
+                        .HasColumnType("NVARCHAR2(2000)");
+
                     b.Property<string>("SensorId")
                         .IsRequired()
                         .HasColumnType("NVARCHAR2(450)");

@@ -682,6 +682,10 @@
           "sensorId": {
             "type": "string",
             "nullable": true
+          },
+          "observacao": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -735,6 +739,10 @@
             "nullable": true
           },
           "sensorId": {
+            "type": "string",
+            "nullable": true
+          },
+          "observacao": {
             "type": "string",
             "nullable": true
           }

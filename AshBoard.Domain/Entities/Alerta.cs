@@ -11,5 +11,6 @@
         public string Gravidade { get; set; } = "Verde";
         public string SensorId { get; set; } = string.Empty;
         public Sensor Sensor { get; set; }
+        public string? Observacao { get; set; }
     }
 }

@@ -154,6 +154,10 @@
               "target": "Package",
               "version": "[9.0.5, )"
             },
+            "Microsoft.ML.FastTree": {
+              "target": "Package",
+              "version": "[4.0.2, )"
+            },
             "Oracle.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.23.80, )"
@@ -540,6 +544,10 @@
               "version": "[9.0.5, )"
             },
             "Microsoft.ML": {
+              "target": "Package",
+              "version": "[4.0.2, )"
+            },
+            "Microsoft.ML.FastTree": {
               "target": "Package",
               "version": "[4.0.2, )"
             },

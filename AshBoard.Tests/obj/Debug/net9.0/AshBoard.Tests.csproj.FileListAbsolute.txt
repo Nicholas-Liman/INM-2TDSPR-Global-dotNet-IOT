@@ -13,6 +13,8 @@ C:\Users\Nicho\Source\Repos\INM-2TDSPR-Global-dotNet-IOT\AshBoard.Tests\obj\Debu
 C:\Users\Nicho\Source\Repos\INM-2TDSPR-Global-dotNet-IOT\AshBoard.Tests\obj\Debug\net9.0\AshBoard.Tests.pdb
 C:\Users\Nicho\Source\Repos\INM-2TDSPR-Global-dotNet-IOT\AshBoard.Tests\obj\Debug\net9.0\AshBoard.Tests.genruntimeconfig.cache
 C:\Users\Nicho\Source\Repos\INM-2TDSPR-Global-dotNet-IOT\AshBoard.Tests\obj\Debug\net9.0\ref\AshBoard.Tests.dll
+D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\AshBoard.Tests\bin\Debug\net9.0\xunit.abstractions.dll
+D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\AshBoard.Tests\bin\Debug\net9.0\xunit.runner.visualstudio.testadapter.dll
 D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\AshBoard.Tests\bin\Debug\net9.0\AshBoard.Tests.deps.json
 D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\AshBoard.Tests\bin\Debug\net9.0\AshBoard.Tests.runtimeconfig.json
 D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\AshBoard.Tests\bin\Debug\net9.0\AshBoard.Tests.dll
@@ -36,5 +38,3 @@ D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\AshBoard.Tests\obj\Debug\net9.0\r
 D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\AshBoard.Tests\obj\Debug\net9.0\AshBoard.Tests.pdb
 D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\AshBoard.Tests\obj\Debug\net9.0\AshBoard.Tests.genruntimeconfig.cache
 D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\AshBoard.Tests\obj\Debug\net9.0\ref\AshBoard.Tests.dll
-D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\AshBoard.Tests\bin\Debug\net9.0\xunit.abstractions.dll
-D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\AshBoard.Tests\bin\Debug\net9.0\xunit.runner.visualstudio.testadapter.dll

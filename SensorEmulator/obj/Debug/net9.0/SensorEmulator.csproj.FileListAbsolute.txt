@@ -14,6 +14,9 @@ D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\SensorEmulator\bin\Debug\net9.0\M
 D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\SensorEmulator\bin\Debug\net9.0\Microsoft.ML.DataView.dll
 D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\SensorEmulator\bin\Debug\net9.0\Microsoft.OpenApi.dll
 D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\SensorEmulator\bin\Debug\net9.0\Newtonsoft.Json.dll
+D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\SensorEmulator\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\SensorEmulator\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\SensorEmulator\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\SensorEmulator\bin\Debug\net9.0\System.CodeDom.dll
 D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\SensorEmulator\bin\Debug\net9.0\System.Numerics.Tensors.dll
 D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\SensorEmulator\bin\Debug\net9.0\runtimes\linux-arm\native\libLdaNative.so
@@ -44,6 +47,3 @@ D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\SensorEmulator\obj\Debug\net9.0\r
 D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\SensorEmulator\obj\Debug\net9.0\SensorEmulator.pdb
 D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\SensorEmulator\obj\Debug\net9.0\SensorEmulator.genruntimeconfig.cache
 D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\SensorEmulator\obj\Debug\net9.0\ref\SensorEmulator.dll
-D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\SensorEmulator\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
-D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\SensorEmulator\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\SensorEmulator\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll

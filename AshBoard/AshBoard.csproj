@@ -1,11 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
-
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.5">
@@ -13,13 +11,13 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.ML" Version="4.0.2" />
+    <PackageReference Include="Microsoft.ML.FastTree" Version="4.0.2" />
     <PackageReference Include="Oracle.EntityFrameworkCore" Version="9.23.80" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="8.1.2" />
     <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="8.1.2" />
     <PackageReference Include="System.Threading.RateLimiting" Version="9.0.5" />
     <PackageReference Include="xunit" Version="2.9.3" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\AshBoard.Application\AshBoard.Application.csproj" />
     <ProjectReference Include="..\AshBoard.Data\AshBoard.Data.csproj" />
@@ -27,5 +25,4 @@
     <ProjectReference Include="..\AshBoard.Service\AshBoard.Service.csproj" />
     <ProjectReference Include="..\AshBoard.Tests\AshBoard.Tests.csproj" />
   </ItemGroup>
-
 </Project>

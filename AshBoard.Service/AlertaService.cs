@@ -31,7 +31,8 @@ namespace AshBoard.Service.Services
                 Longitude = alerta.Longitude,
                 Evento = alerta.Evento,
                 Gravidade = alerta.Gravidade,
-                SensorId = alerta.SensorId
+                SensorId = alerta.SensorId,
+                Observacao = alerta.Observacao
             }).ToList();
         }
 
@@ -50,7 +51,8 @@ namespace AshBoard.Service.Services
                 Longitude = alerta.Longitude,
                 Evento = alerta.Evento,
                 Gravidade = alerta.Gravidade,
-                SensorId = alerta.SensorId
+                SensorId = alerta.SensorId,
+                Observacao = alerta.Observacao
             };
         }
 
@@ -64,7 +66,8 @@ namespace AshBoard.Service.Services
                 Longitude = dto.Longitude,
                 Evento = dto.Evento,
                 Gravidade = dto.Gravidade,
-                SensorId = dto.SensorId
+                SensorId = dto.SensorId,
+                Observacao = dto.Observacao
             };
 
             _context.Alertas.Add(alerta);
@@ -79,7 +82,8 @@ namespace AshBoard.Service.Services
                 Longitude = alerta.Longitude,
                 Evento = alerta.Evento,
                 Gravidade = alerta.Gravidade,
-                SensorId = alerta.SensorId
+                SensorId = alerta.SensorId,
+                Observacao = alerta.Observacao
             };
         }
 

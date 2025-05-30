@@ -10,10 +10,12 @@ namespace AshBoard.Service.Services
     public class LeituraService : ILeituraService
     {
         private readonly AshBoardDbContext _context;
+        private readonly IAlertaMLService _mlService;
 
-        public LeituraService(AshBoardDbContext context)
+        public LeituraService(AshBoardDbContext context, IAlertaMLService mlService)
         {
             _context = context;
+            _mlService = mlService;
         }
 
         public async Task RegistrarLeituraAsync(LeituraSensorDto dto)
@@ -58,7 +60,6 @@ namespace AshBoard.Service.Services
                 SensorId = sensor.Id
             };
 
-            // Lógica de classificação
             if (sensor.Temperatura >= 50 && sensor.NivelCO2 > 800)
             {
                 alerta.Gravidade = "Vermelho";
@@ -66,6 +67,15 @@ namespace AshBoard.Service.Services
             else if (sensor.Temperatura >= 39 || sensor.NivelCO2 > 600)
             {
                 alerta.Gravidade = "Amarelo";
+
+                // Obter probabilidade da IA
+                float temperatura = (float)sensor.Temperatura;
+                float nivelCO2 = (float)sensor.NivelCO2;
+
+                float probabilidade = _mlService.ObterProbabilidadeIncendio(temperatura, nivelCO2);
+
+                // Formatando como porcentagem
+                alerta.Observacao = $"Chance estimada de incêndio: {probabilidade:P1}";
             }
             else
             {
@@ -78,13 +88,13 @@ namespace AshBoard.Service.Services
         private double SimularTemperatura()
         {
             var random = new Random();
-            return Math.Round(15 + random.NextDouble() * 60, 1); // 15–75 °C
+            return Math.Round(15 + random.NextDouble() * 60, 1);
         }
 
         private double SimularNivelCO2()
         {
             var random = new Random();
-            return Math.Round(400 + random.NextDouble() * 1200, 2); // 400–1600 ppm
+            return Math.Round(400 + random.NextDouble() * 1200, 2);
         }
 
         private DirecaoVento SimularDirecao()
