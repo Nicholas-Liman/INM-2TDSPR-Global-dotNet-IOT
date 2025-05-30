@@ -7,6 +7,7 @@ namespace AshBoard.Presentation.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [ApiExplorerSettings(IgnoreApi = true)] // Oculta do Swagger
     public class LeiturasController : ControllerBase
     {
         private readonly ILeituraService _leituraService;

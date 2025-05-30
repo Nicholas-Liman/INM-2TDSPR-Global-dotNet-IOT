@@ -6,10 +6,10 @@ namespace AshBoard.Application.Repositories
 {
     public interface IArraySensorRepository
     {
-        Task<List<ArraySensorEntity>> GetAllAsync();
-        Task<ArraySensorEntity> GetByIdAsync(int id);
-        Task CreateAsync(ArraySensorEntity arraySensor);
-        Task UpdateAsync(ArraySensorEntity arraySensor);
+        Task<List<ArraySensor>> GetAllAsync();
+        Task<ArraySensor> GetByIdAsync(int id);
+        Task CreateAsync(ArraySensor arraySensor);
+        Task UpdateAsync(ArraySensor arraySensor);
         Task DeleteAsync(int id);
     }
 }

@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "AshBoard\\AshBoard.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "SensorEmulator\\SensorEmulator.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

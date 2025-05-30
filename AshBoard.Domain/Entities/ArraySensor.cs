@@ -3,7 +3,7 @@
     public class ArraySensor
     {
         public int Id { get; set; }
-        public string NomeLocal { get; set; } = string.Empty; // Exemplo -> Bosque das corujas
+        public string NomeLocal { get; set; } = string.Empty;
 
         public ICollection<Sensor> Sensores { get; set; } = new List<Sensor>();
     }

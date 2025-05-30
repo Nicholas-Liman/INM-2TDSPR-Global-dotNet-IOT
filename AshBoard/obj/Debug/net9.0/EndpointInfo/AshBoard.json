@@ -1,0 +1,909 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "AshBoard API",
+    "description": "API para monitoramento de sensores e alertas de incêndio",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/Sensor": {
+      "get": {
+        "tags": [
+          "1 - Sensor"
+        ],
+        "summary": "Listar todos os sensores",
+        "responses": {
+          "200": {
+            "description": "Sensores retornados com sucesso",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SensorDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SensorDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SensorDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "1 - Sensor"
+        ],
+        "summary": "Criar um novo sensor",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateSensorDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateSensorDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateSensorDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Sensor criado com sucesso",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SensorDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SensorDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SensorDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos ou duplicados"
+          }
+        }
+      }
+    },
+    "/api/Sensor/{id}": {
+      "get": {
+        "tags": [
+          "1 - Sensor"
+        ],
+        "summary": "Buscar um sensor por ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sensor encontrado",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SensorDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SensorDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SensorDto"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Sensor não encontrado"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "1 - Sensor"
+        ],
+        "summary": "Atualizar um sensor existente",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateSensorDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateSensorDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateSensorDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Sensor atualizado com sucesso"
+          },
+          "404": {
+            "description": "Sensor não encontrado"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "1 - Sensor"
+        ],
+        "summary": "Remover um sensor",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sensor removido com sucesso"
+          },
+          "404": {
+            "description": "Sensor não encontrado"
+          }
+        }
+      }
+    },
+    "/api/Sensor/{id}/leitura": {
+      "put": {
+        "tags": [
+          "1 - Sensor"
+        ],
+        "summary": "Atualizar leitura do sensor",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LeituraSensorDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LeituraSensorDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LeituraSensorDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Leitura atualizada com sucesso"
+          },
+          "404": {
+            "description": "Sensor não encontrado"
+          }
+        }
+      }
+    },
+    "/api/ArraySensor": {
+      "get": {
+        "tags": [
+          "2 - Array de Sensores"
+        ],
+        "summary": "Listar todos os arrays de sensores",
+        "responses": {
+          "200": {
+            "description": "Arrays retornados com sucesso",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ArraySensorDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ArraySensorDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ArraySensorDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "2 - Array de Sensores"
+        ],
+        "summary": "Criar novo array de sensores",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateArraySensorDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateArraySensorDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateArraySensorDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Array criado com sucesso",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ArraySensorDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ArraySensorDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ArraySensorDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos"
+          }
+        }
+      }
+    },
+    "/api/ArraySensor/{id}": {
+      "get": {
+        "tags": [
+          "2 - Array de Sensores"
+        ],
+        "summary": "Buscar array por ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Array encontrado",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ArraySensorDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ArraySensorDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ArraySensorDto"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Array não encontrado"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "2 - Array de Sensores"
+        ],
+        "summary": "Atualizar array de sensores",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateArraySensorDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateArraySensorDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateArraySensorDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Array atualizado com sucesso"
+          },
+          "404": {
+            "description": "Array não encontrado"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "2 - Array de Sensores"
+        ],
+        "summary": "Remover array de sensores",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Array removido com sucesso"
+          },
+          "404": {
+            "description": "Array não encontrado"
+          }
+        }
+      }
+    },
+    "/api/Alerta": {
+      "get": {
+        "tags": [
+          "3 - Alertas"
+        ],
+        "summary": "Listar todos os alertas",
+        "responses": {
+          "200": {
+            "description": "Lista de alertas retornada com sucesso",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AlertaDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AlertaDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AlertaDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "3 - Alertas"
+        ],
+        "summary": "Criar um novo alerta",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAlertaDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAlertaDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAlertaDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Alerta criado com sucesso",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlertaDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlertaDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlertaDto"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Dados inválidos"
+          }
+        }
+      }
+    },
+    "/api/Alerta/{id}": {
+      "get": {
+        "tags": [
+          "3 - Alertas"
+        ],
+        "summary": "Buscar alerta por ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Alerta encontrado",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlertaDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlertaDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AlertaDto"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Alerta não encontrado"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "3 - Alertas"
+        ],
+        "summary": "Atualização de alerta desativada por regra de negócio",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": { }
+            },
+            "text/json": {
+              "schema": { }
+            },
+            "application/*+json": {
+              "schema": { }
+            }
+          }
+        },
+        "responses": {
+          "400": {
+            "description": "Atualizações não são permitidas"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "3 - Alertas"
+        ],
+        "summary": "Remover um alerta",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Alerta removido com sucesso"
+          },
+          "404": {
+            "description": "Alerta não encontrado"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AlertaDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dataHoraColeta": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "nomeLocal": {
+            "type": "string",
+            "nullable": true
+          },
+          "latitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "longitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "evento": {
+            "type": "string",
+            "nullable": true
+          },
+          "gravidade": {
+            "type": "string",
+            "nullable": true
+          },
+          "sensorId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ArraySensorDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nomeLocal": {
+            "type": "string",
+            "nullable": true
+          },
+          "sensoresIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateAlertaDto": {
+        "type": "object",
+        "properties": {
+          "dataHoraColeta": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "nomeLocal": {
+            "type": "string",
+            "nullable": true
+          },
+          "latitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "longitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "evento": {
+            "type": "string",
+            "nullable": true
+          },
+          "gravidade": {
+            "type": "string",
+            "nullable": true
+          },
+          "sensorId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateArraySensorDto": {
+        "type": "object",
+        "properties": {
+          "nomeLocal": {
+            "type": "string",
+            "nullable": true
+          },
+          "sensorIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateSensorDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "nomeLocal": {
+            "type": "string",
+            "nullable": true
+          },
+          "latitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "longitude": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LeituraSensorDto": {
+        "type": "object",
+        "properties": {
+          "sensorId": {
+            "type": "string",
+            "nullable": true
+          },
+          "temperatura": {
+            "type": "number",
+            "format": "double"
+          },
+          "nivelCO2": {
+            "type": "number",
+            "format": "double"
+          },
+          "direcaoVento": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataHora": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SensorDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "nomeLocal": {
+            "type": "string",
+            "nullable": true
+          },
+          "latitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "longitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "temperatura": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "nivelCO2": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "direcaoVento": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataUltimaLeitura": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "arraySensorId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateArraySensorDto": {
+        "type": "object",
+        "properties": {
+          "nomeLocal": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateSensorDto": {
+        "type": "object",
+        "properties": {
+          "nomeLocal": {
+            "type": "string",
+            "nullable": true
+          },
+          "latitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "longitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "temperatura": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "nivelCO2": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "direcaoVento": {
+            "type": "string",
+            "nullable": true
+          },
+          "dataUltimaLeitura": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "arraySensorId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

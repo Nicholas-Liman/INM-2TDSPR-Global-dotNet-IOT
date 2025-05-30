@@ -7,6 +7,7 @@ namespace AshBoard.Presentation.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [ApiExplorerSettings(GroupName = "3 - Alertas")]
     public class AlertaController : ControllerBase
     {
         private readonly IAlertaService _alertaService;
@@ -58,25 +59,13 @@ namespace AshBoard.Presentation.Controllers
             }
         }
 
-        // PUT: api/alerta/{id}
+        // PUT: api/alerta/{id} → Regra: alertas não podem ser atualizados
         [HttpPut("{id}")]
-        [SwaggerOperation(Summary = "Atualizar gravidade ou incêndio próximo de um alerta")]
-        [SwaggerResponse(200, "Alerta atualizado com sucesso")]
-        [SwaggerResponse(404, "Alerta não encontrado")]
-        public async Task<IActionResult> Update(int id, [FromBody] UpdateAlertaDto dto)
+        [SwaggerOperation(Summary = "Atualização de alerta desativada por regra de negócio")]
+        [SwaggerResponse(400, "Atualizações não são permitidas")]
+        public IActionResult Update(int id, [FromBody] object dto)
         {
-            try
-            {
-                var atualizado = await _alertaService.UpdateAsync(id, dto);
-                if (!atualizado)
-                    return NotFound($"Alerta com ID {id} não encontrado.");
-
-                return Ok($"Alerta {id} atualizado com sucesso.");
-            }
-            catch (ArgumentException ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            return BadRequest("Atualizações em alertas não são permitidas por regra de negócio. Crie um novo alerta.");
         }
 
         // DELETE: api/alerta/{id}

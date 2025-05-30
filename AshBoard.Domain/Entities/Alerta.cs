@@ -8,11 +8,8 @@
         public double Latitude { get; set; }
         public double Longitude { get; set; }
         public string Evento { get; set; } = "Incêndio";
-        public string Gravidade { get; set; } = "Verde"; // Verde -> Amarelo -> Vermelho
-
-        public bool IncendioProximo { get; set; }
-
-        public int SensorId { get; set; }
+        public string Gravidade { get; set; } = "Verde";
+        public string SensorId { get; set; } = string.Empty;
         public Sensor Sensor { get; set; }
     }
 }

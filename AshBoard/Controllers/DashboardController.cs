@@ -2,8 +2,6 @@
 using AshBoard.Application.DTOs.ArraySensor;
 using AshBoard.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace AshBoard.Controllers
 {
@@ -18,6 +16,7 @@ namespace AshBoard.Controllers
             _arraySensorService = arraySensorService;
         }
 
+        // Lista todos os sensores ordenados por ID
         public async Task<IActionResult> Index()
         {
             var sensores = await _sensorService.GetAllAsync();
@@ -25,44 +24,65 @@ namespace AshBoard.Controllers
             return View(ordenados);
         }
 
+        // Lista todos os arrays com seus sensores
         public async Task<IActionResult> ArraySensors()
         {
             var arrays = await _arraySensorService.GetAllAsync();
             return View(arrays);
         }
 
+        // Página de criação de sensor
         public IActionResult CreateSensor() => View();
 
+        // Cria um novo sensor
         [HttpPost]
         public async Task<IActionResult> CreateSensor(CreateSensorDto dto)
         {
+            if (!ModelState.IsValid)
+                return View(dto);
+
             await _sensorService.CreateAsync(dto);
             return RedirectToAction("Index");
         }
 
-        public async Task<IActionResult> EditSensor(int id)
+        // Página de edição
+        public async Task<IActionResult> EditSensor(string id)
         {
             var sensor = await _sensorService.GetByIdAsync(id);
+            if (sensor == null)
+                return NotFound();
+
             return View(sensor);
         }
 
+        // Edita um sensor existente
         [HttpPost]
         public async Task<IActionResult> EditSensor(SensorDto dto)
         {
+            if (!ModelState.IsValid)
+                return View(dto);
+
             var update = new UpdateSensorDto
             {
-                Nome = dto.Nome,
+                NomeLocal = dto.NomeLocal,
                 Latitude = dto.Latitude,
                 Longitude = dto.Longitude
             };
 
-            await _sensorService.UpdateAsync(dto.Id, update);
+            var success = await _sensorService.UpdateAsync(dto.Id, update);
+            if (!success)
+                return NotFound();
+
             return RedirectToAction("Index");
         }
 
-        public async Task<IActionResult> DeleteSensor(int id)
+        // Deleta um sensor
+        public async Task<IActionResult> DeleteSensor(string id)
         {
-            await _sensorService.DeleteAsync(id);
+            var success = await _sensorService.DeleteAsync(id);
+            if (!success)
+                return NotFound();
+
             return RedirectToAction("Index");
         }
     }

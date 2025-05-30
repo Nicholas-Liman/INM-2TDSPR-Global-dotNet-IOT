@@ -1,70 +1,96 @@
 ﻿using AshBoard.Application.DTOs.Alerta;
-using AshBoard.Application.Repositories;
 using AshBoard.Application.Interfaces;
+using AshBoard.Data.AppData;
 using AshBoard.Domain.Entities;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
-namespace AshBoard.Infrastructure.Services
+namespace AshBoard.Service.Services
 {
     public class AlertaService : IAlertaService
     {
-        private readonly IAlertaRepository _alertaRepository;
+        private readonly AshBoardDbContext _context;
 
-        public AlertaService(IAlertaRepository alertaRepository)
+        public AlertaService(AshBoardDbContext context)
         {
-            _alertaRepository = alertaRepository;
+            _context = context;
         }
 
         public async Task<List<AlertaDto>> GetAllAsync()
         {
-            var alertas = await _alertaRepository.GetAllAsync();
-            return alertas.Select(a => new AlertaDto
+            var alertas = await _context.Alertas
+                .Include(a => a.Sensor)
+                .OrderByDescending(a => a.DataHoraColeta)
+                .ToListAsync();
+
+            return alertas.Select(alerta => new AlertaDto
             {
-                Id = a.Id,
-                Nivel = a.Nivel,
-                Mensagem = a.Mensagem
+                Id = alerta.Id,
+                DataHoraColeta = alerta.DataHoraColeta,
+                NomeLocal = alerta.NomeLocal,
+                Latitude = alerta.Latitude,
+                Longitude = alerta.Longitude,
+                Evento = alerta.Evento,
+                Gravidade = alerta.Gravidade,
+                SensorId = alerta.SensorId
             }).ToList();
         }
 
-        public async Task<AlertaDto> GetByIdAsync(int id)
+        public async Task<AlertaDto?> GetByIdAsync(int id)
         {
-            var a = await _alertaRepository.GetByIdAsync(id);
-            if (a == null) return null;
+            var alerta = await _context.Alertas.FindAsync(id);
+
+            if (alerta == null) return null;
 
             return new AlertaDto
             {
-                Id = a.Id,
-                Nivel = a.Nivel,
-                Mensagem = a.Mensagem
+                Id = alerta.Id,
+                DataHoraColeta = alerta.DataHoraColeta,
+                NomeLocal = alerta.NomeLocal,
+                Latitude = alerta.Latitude,
+                Longitude = alerta.Longitude,
+                Evento = alerta.Evento,
+                Gravidade = alerta.Gravidade,
+                SensorId = alerta.SensorId
             };
         }
 
-        public async Task CreateAsync(CreateAlertaDto dto)
+        public async Task<AlertaDto> CreateAsync(CreateAlertaDto dto)
         {
-            var entity = new AlertaEntity
+            var alerta = new Alerta
             {
-                Nivel = dto.Nivel,
-                Mensagem = dto.Mensagem
+                DataHoraColeta = dto.DataHoraColeta,
+                NomeLocal = dto.NomeLocal,
+                Latitude = dto.Latitude,
+                Longitude = dto.Longitude,
+                Evento = dto.Evento,
+                Gravidade = dto.Gravidade,
+                SensorId = dto.SensorId
             };
-            await _alertaRepository.CreateAsync(entity);
+
+            _context.Alertas.Add(alerta);
+            await _context.SaveChangesAsync();
+
+            return new AlertaDto
+            {
+                Id = alerta.Id,
+                DataHoraColeta = alerta.DataHoraColeta,
+                NomeLocal = alerta.NomeLocal,
+                Latitude = alerta.Latitude,
+                Longitude = alerta.Longitude,
+                Evento = alerta.Evento,
+                Gravidade = alerta.Gravidade,
+                SensorId = alerta.SensorId
+            };
         }
 
-        public async Task UpdateAsync(int id, UpdateAlertaDto dto)
+        public async Task<bool> DeleteAsync(int id)
         {
-            var alerta = await _alertaRepository.GetByIdAsync(id);
-            if (alerta == null) return;
+            var alerta = await _context.Alertas.FindAsync(id);
+            if (alerta == null) return false;
 
-            alerta.Nivel = dto.Nivel;
-            alerta.Mensagem = dto.Mensagem;
-
-            await _alertaRepository.UpdateAsync(alerta);
-        }
-
-        public async Task DeleteAsync(int id)
-        {
-            await _alertaRepository.DeleteAsync(id);
+            _context.Alertas.Remove(alerta);
+            await _context.SaveChangesAsync();
+            return true;
         }
     }
 }

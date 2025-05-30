@@ -2,8 +2,9 @@
 using Moq;
 using AshBoard.Application.Interfaces;
 using AshBoard.Application.DTOs.Sensor;
-using AshBoard.Infrastructure.Services;
+using AshBoard.Application.Repositories;
 using AshBoard.Domain.Entities;
+using AshBoard.Service.Services;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
@@ -14,10 +15,10 @@ public class SensorServiceTests
     {
         // Arrange
         var mockRepo = new Mock<ISensorRepository>();
-        mockRepo.Setup(r => r.GetAllAsync()).ReturnsAsync(new List<SensorEntity>
+        mockRepo.Setup(r => r.GetAllAsync()).ReturnsAsync(new List<Sensor>
         {
-            new SensorEntity { Id = 1, Nome = "Sensor 1" },
-            new SensorEntity { Id = 2, Nome = "Sensor 2" }
+            new Sensor { Id = "abc123", NomeLocal = "Sensor 1" },
+            new Sensor { Id = "def456", NomeLocal = "Sensor 2" }
         });
 
         var service = new SensorService(mockRepo.Object);
@@ -28,5 +29,7 @@ public class SensorServiceTests
         // Assert
         Assert.NotNull(result);
         Assert.Equal(2, result.Count);
+        Assert.Contains(result, s => s.NomeLocal == "Sensor 1");
+        Assert.Contains(result, s => s.NomeLocal == "Sensor 2");
     }
 }

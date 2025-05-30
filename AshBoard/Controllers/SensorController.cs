@@ -1,4 +1,5 @@
 ﻿using AshBoard.Application.DTOs.Sensor;
+using AshBoard.Application.DTOs.Leitura;
 using AshBoard.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
@@ -7,6 +8,7 @@ namespace AshBoard.Presentation.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [ApiExplorerSettings(GroupName = "1 - Sensor")]
     public class SensorController : ControllerBase
     {
         private readonly ISensorService _sensorService;
@@ -91,6 +93,20 @@ namespace AshBoard.Presentation.Controllers
                 return NotFound($"Sensor com ID '{id}' não encontrado.");
 
             return Ok($"Sensor {id} removido com sucesso.");
+        }
+
+        // ✅ NOVO ENDPOINT: PUT /api/sensor/{id}/leitura
+        [HttpPut("{id}/leitura")]
+        [SwaggerOperation(Summary = "Atualizar leitura do sensor")]
+        [SwaggerResponse(200, "Leitura atualizada com sucesso")]
+        [SwaggerResponse(404, "Sensor não encontrado")]
+        public async Task<IActionResult> AtualizarLeitura(string id, [FromBody] LeituraSensorDto dto)
+        {
+            var atualizado = await _sensorService.AtualizarLeituraAsync(id, dto);
+            if (!atualizado)
+                return NotFound($"Sensor com ID '{id}' não encontrado.");
+
+            return Ok($"Leitura do sensor {id} atualizada com sucesso.");
         }
     }
 }

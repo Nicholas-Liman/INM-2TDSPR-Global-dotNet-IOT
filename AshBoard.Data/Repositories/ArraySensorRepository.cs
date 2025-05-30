@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace AshBoard.Infrastructure.Repositories
+namespace AshBoard.Data.Repositories
 {
     public class ArraySensorRepository : IArraySensorRepository
     {
@@ -16,27 +16,32 @@ namespace AshBoard.Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task<List<ArraySensorEntity>> GetAllAsync()
-        {
-            return await _context.ArraySensores
-                .Include(a => a.Sensores) // Assume que existe navegação para sensores
-                .ToListAsync();
-        }
-
-        public async Task<ArraySensorEntity> GetByIdAsync(int id)
+        public async Task<List<ArraySensor>> GetAllAsync()
         {
             return await _context.ArraySensores
                 .Include(a => a.Sensores)
-                .FirstOrDefaultAsync(a => a.Id == id);
+                .ToListAsync();
         }
 
-        public async Task CreateAsync(ArraySensorEntity arraySensor)
+        public async Task<ArraySensor> GetByIdAsync(int id)
+        {
+            var arraySensor = await _context.ArraySensores
+                .Include(a => a.Sensores)
+                .FirstOrDefaultAsync(a => a.Id == id);
+
+            if (arraySensor == null)
+                throw new KeyNotFoundException($"ArraySensor with ID {id} not found.");
+
+            return arraySensor;
+        }
+
+        public async Task CreateAsync(ArraySensor arraySensor)
         {
             _context.ArraySensores.Add(arraySensor);
             await _context.SaveChangesAsync();
         }
 
-        public async Task UpdateAsync(ArraySensorEntity arraySensor)
+        public async Task UpdateAsync(ArraySensor arraySensor)
         {
             _context.ArraySensores.Update(arraySensor);
             await _context.SaveChangesAsync();

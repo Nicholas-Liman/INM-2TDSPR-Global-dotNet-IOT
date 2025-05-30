@@ -7,6 +7,7 @@ namespace AshBoard.Presentation.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [ApiExplorerSettings(GroupName = "2 - Array de Sensores")]
     public class ArraySensorController : ControllerBase
     {
         private readonly IArraySensorService _arraySensorService;
@@ -47,6 +48,9 @@ namespace AshBoard.Presentation.Controllers
         [SwaggerResponse(400, "Dados inválidos")]
         public async Task<IActionResult> Create([FromBody] CreateArraySensorDto dto)
         {
+            if (dto == null || string.IsNullOrWhiteSpace(dto.NomeLocal))
+                return BadRequest("Dados do array são obrigatórios.");
+
             try
             {
                 var novo = await _arraySensorService.CreateAsync(dto);
@@ -65,18 +69,11 @@ namespace AshBoard.Presentation.Controllers
         [SwaggerResponse(404, "Array não encontrado")]
         public async Task<IActionResult> Update(int id, [FromBody] UpdateArraySensorDto dto)
         {
-            try
-            {
-                var atualizado = await _arraySensorService.UpdateAsync(id, dto);
-                if (!atualizado)
-                    return NotFound($"ArraySensor com ID {id} não encontrado.");
+            var atualizado = await _arraySensorService.UpdateAsync(id, dto);
+            if (!atualizado)
+                return NotFound($"ArraySensor com ID {id} não encontrado.");
 
-                return Ok($"ArraySensor {id} atualizado com sucesso.");
-            }
-            catch (ArgumentException ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            return Ok($"ArraySensor {id} atualizado com sucesso.");
         }
 
         // DELETE: api/arraysensor/{id}

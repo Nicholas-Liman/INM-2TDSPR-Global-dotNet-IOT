@@ -7,4 +7,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="8.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AshBoard.Application\AshBoard.Application.csproj" />
+    <ProjectReference Include="..\AshBoard.Domain\AshBoard.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

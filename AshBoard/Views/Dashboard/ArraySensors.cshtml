@@ -1,26 +1,35 @@
 ﻿@model List<AshBoard.Application.DTOs.ArraySensor.ArraySensorDto>
 @{
-    ViewData["Title"] = "Array de Sensores";
+    ViewData["Title"] = "Arrays de Sensores";
 }
 
 <h2>Arrays de Sensores</h2>
 
-@foreach (var array in Model)
-{
-    <div class="card mb-3">
-        <div class="card-header">
-            Array ID: @array.Id
-        </div>
-        <ul class="list-group list-group-flush">
-            @foreach (var sensor in array.Sensores)
-            {
-                <li class="list-group-item">
-                    <strong>@sensor.Nome</strong><br />
-                    Temp: @sensor.Temperatura °C<br />
-                    Carbono: @sensor.Carbono %<br />
-                    Direção do Vento: @sensor.DirecaoVento
-                </li>
-            }
-        </ul>
-    </div>
-}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome do Local</th>
+            <th>IDs dos Sensores</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var array in Model)
+        {
+            <tr>
+                <td>@array.Id</td>
+                <td>@array.NomeLocal</td>
+                <td>
+                    @if (array.SensoresIds != null && array.SensoresIds.Any())
+                    {
+                        @string.Join(", ", array.SensoresIds)
+                    }
+                    else
+                    {
+                        <span>Nenhum sensor vinculado</span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

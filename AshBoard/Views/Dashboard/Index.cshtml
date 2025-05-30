@@ -4,13 +4,14 @@
 }
 
 <h2>Lista de Sensores</h2>
-<a class="btn btn-primary mb-2" href="/Dashboard/CreateSensor">Novo Sensor</a>
+
+<a href="@Url.Action("CreateSensor", "Dashboard")" class="btn btn-success mb-3">Adicionar Novo Sensor</a>
 
 <table class="table table-bordered">
     <thead>
         <tr>
             <th>ID</th>
-            <th>Nome</th>
+            <th>Nome do Local</th>
             <th>Latitude</th>
             <th>Longitude</th>
             <th>Ações</th>
@@ -21,12 +22,12 @@
         {
             <tr>
                 <td>@s.Id</td>
-                <td>@s.Nome</td>
+                <td>@s.NomeLocal</td>
                 <td>@s.Latitude</td>
                 <td>@s.Longitude</td>
                 <td>
-                    <a class="btn btn-sm btn-warning" href="/Dashboard/EditSensor/@s.Id">Editar</a>
-                    <a class="btn btn-sm btn-danger" href="/Dashboard/DeleteSensor/@s.Id">Excluir</a>
+                    <a class="btn btn-primary btn-sm" href="@Url.Action("EditSensor", "Dashboard", new { id = s.Id })">Editar</a>
+                    <a class="btn btn-danger btn-sm" href="@Url.Action("DeleteSensor", "Dashboard", new { id = s.Id })">Excluir</a>
                 </td>
             </tr>
         }

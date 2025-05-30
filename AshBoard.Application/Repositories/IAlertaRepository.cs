@@ -6,10 +6,10 @@ namespace AshBoard.Application.Repositories
 {
     public interface IAlertaRepository
     {
-        Task<List<AlertaEntity>> GetAllAsync();
-        Task<AlertaEntity> GetByIdAsync(int id);
-        Task CreateAsync(AlertaEntity alerta);
-        Task UpdateAsync(AlertaEntity alerta);
+        Task<List<Alerta>> GetAllAsync();
+        Task<Alerta> GetByIdAsync(int id);
+        Task CreateAsync(Alerta alerta);
+        Task UpdateAsync(Alerta alerta);
         Task DeleteAsync(int id);
     }
 }

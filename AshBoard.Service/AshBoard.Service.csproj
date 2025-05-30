@@ -15,13 +15,13 @@
     </PackageReference>
     <PackageReference Include="Microsoft.ML" Version="4.0.2" />
     <PackageReference Include="Oracle.EntityFrameworkCore" Version="9.23.80" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="8.1.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\AshBoard.Application\AshBoard.Application.csproj" />
     <ProjectReference Include="..\AshBoard.Data\AshBoard.Data.csproj" />
     <ProjectReference Include="..\AshBoard.Domain\AshBoard.Domain.csproj" />
-    <ProjectReference Include="..\AshBoard.Tests\AshBoard.Tests.csproj" />
   </ItemGroup>
 
 </Project>

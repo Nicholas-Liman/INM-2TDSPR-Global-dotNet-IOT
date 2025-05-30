@@ -1,46 +1,46 @@
 ﻿using AshBoard.Application.Interfaces;
 using AshBoard.Application.Repositories;
 using AshBoard.Data.AppData;
-using AshBoard.Infrastructure.Repositories;
-using AshBoard.Infrastructure.Services;
-using Microsoft.EntityFrameworkCore;
+using AshBoard.Data.Repositories;
+using AshBoard.Service.Services;
 using Microsoft.OpenApi.Models;
+using Oracle.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configuração do banco de dados
 builder.Services.AddDbContext<AshBoardDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))); // Ou UseInMemoryDatabase("AshBoard")
+    options.UseOracle(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Registro dos serviços da aplicação
 builder.Services.AddScoped<ISensorService, SensorService>();
 builder.Services.AddScoped<IArraySensorService, ArraySensorService>();
 builder.Services.AddScoped<IAlertaService, AlertaService>();
+builder.Services.AddScoped<ILeituraService, LeituraService>();
 
-// Registro dos repositórios da aplicação
 builder.Services.AddScoped<ISensorRepository, SensorRepository>();
 builder.Services.AddScoped<IArraySensorRepository, ArraySensorRepository>();
 builder.Services.AddScoped<IAlertaRepository, AlertaRepository>();
 
-// Suporte a Razor Views para o dashboard
 builder.Services.AddControllersWithViews();
 
-// Configuração do Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
     c.EnableAnnotations();
+
     c.SwaggerDoc("v1", new OpenApiInfo
     {
         Title = "AshBoard API",
         Version = "v1",
         Description = "API para monitoramento de sensores e alertas de incêndio"
     });
+
+    c.TagActionsBy(api => new[] { api.GroupName ?? api.ActionDescriptor.RouteValues["controller"]! });
+    c.DocInclusionPredicate((docName, apiDesc) => true);
 });
 
 var app = builder.Build();
 
-// Configuração do pipeline HTTP
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -51,20 +51,14 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-// Habilita o uso de arquivos estáticos, como CSS e JS para as views Razor
 app.UseStaticFiles();
-
 app.UseRouting();
-
 app.UseAuthorization();
 
-// Rota padrão para o Dashboard com Razor Views
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Dashboard}/{action=Index}/{id?}");
 
-// Mapeia os controllers da API REST
 app.MapControllers();
 
 app.Run();

@@ -1,4 +1,5 @@
 ﻿using AshBoard.Application.DTOs.Sensor;
+using AshBoard.Application.DTOs.Leitura;
 
 namespace AshBoard.Application.Interfaces
 {
@@ -9,5 +10,6 @@ namespace AshBoard.Application.Interfaces
         Task<SensorDto> CreateAsync(CreateSensorDto dto);
         Task<bool> UpdateAsync(string id, UpdateSensorDto dto);
         Task<bool> DeleteAsync(string id);
+        Task<bool> AtualizarLeituraAsync(string id, LeituraSensorDto dto);
     }
 }

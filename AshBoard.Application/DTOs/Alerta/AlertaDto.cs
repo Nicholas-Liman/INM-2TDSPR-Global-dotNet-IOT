@@ -9,7 +9,7 @@
         public double Longitude { get; set; }
         public string Evento { get; set; } = "Incêndio";
         public string Gravidade { get; set; } = "Verde";
-        public bool IncendioProximo { get; set; }
-        public int SensorId { get; set; }
+        public string SensorId { get; set; } = string.Empty;
+
     }
 }
