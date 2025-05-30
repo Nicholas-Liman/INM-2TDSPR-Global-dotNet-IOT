@@ -1,5 +1,4 @@
-﻿// MLModel.cs
-using Microsoft.ML;
+﻿using Microsoft.ML;
 using Microsoft.ML.Data;
 using Microsoft.ML.Trainers;
 using System;
@@ -11,10 +10,10 @@ namespace AshBoard.Data.ML
 {
     public partial class MLModel
     {
-        // Caminho do arquivo .zip do modelo
-        private static string MLNetModelPath = Path.Combine(AppContext.BaseDirectory, "AppData", "MLModel.zip");
+        // Caminho relativo corrigido para fora do bin
+        private static readonly string MLNetModelPath =
+            Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, @"..\..\..\..\AshBoard.Data\ML\MLModel.zip"));
 
-        // Classes de entrada e saída do modelo
         #region InputOutput
         public class ModelInput
         {
@@ -28,32 +27,22 @@ namespace AshBoard.Data.ML
 
             [LoadColumn(2)]
             [ColumnName("Incendio")]
-            public string Incendio { get; set; }
+            public bool Incendio { get; set; }
         }
 
         public class ModelOutput
         {
-            [ColumnName("Temperatura")]
-            public float Temperatura { get; set; }
-
-            [ColumnName("NivelCO2")]
-            public float NivelCO2 { get; set; }
-
-            [ColumnName("Incendio")]
-            public uint Incendio { get; set; }
-
-            [ColumnName("Features")]
-            public float[] Features { get; set; }
-
             [ColumnName("PredictedLabel")]
-            public string PredictedLabel { get; set; }
+            public bool PredictedLabel { get; set; }
+
+            [ColumnName("Probability")]
+            public float Probability { get; set; }
 
             [ColumnName("Score")]
-            public float[] Score { get; set; }
+            public float Score { get; set; }
         }
         #endregion
 
-        // Predição padrão
         public static readonly Lazy<PredictionEngine<ModelInput, ModelOutput>> PredictEngine =
             new Lazy<PredictionEngine<ModelInput, ModelOutput>>(() => CreatePredictEngine(), true);
 
@@ -70,37 +59,8 @@ namespace AshBoard.Data.ML
             return predEngine.Predict(input);
         }
 
-        // Obter todas as pontuações
-        public static IOrderedEnumerable<KeyValuePair<string, float>> PredictAllLabels(ModelInput input)
-        {
-            var result = Predict(input);
-            return GetSortedScoresWithLabels(result);
-        }
-
-        public static IOrderedEnumerable<KeyValuePair<string, float>> GetSortedScoresWithLabels(ModelOutput result)
-        {
-            var scores = result.Score;
-            var labels = GetLabels(result);
-
-            var mapped = labels.Zip(scores, (label, score) => new KeyValuePair<string, float>(label, score));
-            return mapped.OrderByDescending(x => x.Value);
-        }
-
-        private static IEnumerable<string> GetLabels(ModelOutput result)
-        {
-            var schema = PredictEngine.Value.OutputSchema;
-            var labelColumn = schema.GetColumnOrNull("Incendio");
-
-            if (labelColumn == null)
-                throw new Exception("Coluna 'Incendio' não encontrada no modelo.");
-
-            var keyNames = new VBuffer<ReadOnlyMemory<char>>();
-            labelColumn.Value.GetKeyValues(ref keyNames);
-            return keyNames.DenseValues().Select(x => x.ToString());
-        }
-
-        // Caminho para re-treinamento
-        public const string RetrainFilePath = @"D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\dataset_incendios.csv";
+        // Caminho para re-treinamento do modelo
+        public const string RetrainFilePath = @"D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\dataset_incendios_contextual_limpo.csv";
         public const char RetrainSeparatorChar = ',';
         public const bool RetrainHasHeader = true;
         public const bool RetrainAllowQuoting = false;
@@ -139,19 +99,14 @@ namespace AshBoard.Data.ML
                     new InputOutputColumnPair("NivelCO2", "NivelCO2")
                 })
                 .Append(mlContext.Transforms.Concatenate("Features", "Temperatura", "NivelCO2"))
-                .Append(mlContext.Transforms.Conversion.MapValueToKey("Incendio"))
-                .Append(mlContext.MulticlassClassification.Trainers
-                    .OneVersusAll(
-                        mlContext.BinaryClassification.Trainers
-                            .LbfgsLogisticRegression(new LbfgsLogisticRegressionBinaryTrainer.Options
-                            {
-                                L1Regularization = 1f,
-                                L2Regularization = 1f,
-                                LabelColumnName = "Incendio",
-                                FeatureColumnName = "Features"
-                            }),
-                        labelColumnName: "Incendio"))
-                .Append(mlContext.Transforms.Conversion.MapKeyToValue("PredictedLabel", "PredictedLabel"));
+                .Append(mlContext.BinaryClassification.Trainers
+                    .SdcaLogisticRegression(new SdcaLogisticRegressionBinaryTrainer.Options
+                    {
+                        LabelColumnName = "Incendio",
+                        FeatureColumnName = "Features",
+                        L1Regularization = 1f,
+                        L2Regularization = 1f
+                    }));
 
             return pipeline;
         }
@@ -170,9 +125,10 @@ namespace AshBoard.Data.ML
 
             var model = RetrainModel(mlContext, data);
 
-            // Salvar o modelo como .zip na raiz
+            // Garante que o diretório exista
+            Directory.CreateDirectory(Path.GetDirectoryName(outputZipPath)!);
+
             mlContext.Model.Save(model, data.Schema, outputZipPath);
         }
-
     }
 }

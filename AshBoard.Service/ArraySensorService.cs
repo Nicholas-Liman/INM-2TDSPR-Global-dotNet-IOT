@@ -1,7 +1,9 @@
 ﻿using AshBoard.Application.DTOs.ArraySensor;
+using AshBoard.Application.DTOs.Sensor;
 using AshBoard.Application.Interfaces;
 using AshBoard.Application.Repositories;
 using AshBoard.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -27,7 +29,18 @@ namespace AshBoard.Service.Services
             {
                 Id = array.Id,
                 NomeLocal = array.NomeLocal,
-                SensoresIds = array.Sensores?.Select(s => s.Id).ToList() ?? new List<string>()
+                Sensores = array.Sensores?.Select(sensor => new SensorDto
+                {
+                    Id = sensor.Id,
+                    NomeLocal = sensor.NomeLocal,
+                    Latitude = sensor.Latitude,
+                    Longitude = sensor.Longitude,
+                    Temperatura = sensor.Temperatura,
+                    NivelCO2 = sensor.NivelCO2,
+                    DirecaoVento = sensor.DirecaoVento,
+                    DataUltimaLeitura = sensor.DataUltimaLeitura,
+                    ArraySensorId = sensor.ArraySensorId
+                }).ToList() ?? new List<SensorDto>()
             }).ToList();
         }
 
@@ -40,7 +53,18 @@ namespace AshBoard.Service.Services
             {
                 Id = array.Id,
                 NomeLocal = array.NomeLocal,
-                SensoresIds = array.Sensores?.Select(s => s.Id).ToList() ?? new List<string>()
+                Sensores = array.Sensores?.Select(sensor => new SensorDto
+                {
+                    Id = sensor.Id,
+                    NomeLocal = sensor.NomeLocal,
+                    Latitude = sensor.Latitude,
+                    Longitude = sensor.Longitude,
+                    Temperatura = sensor.Temperatura,
+                    NivelCO2 = sensor.NivelCO2,
+                    DirecaoVento = sensor.DirecaoVento,
+                    DataUltimaLeitura = sensor.DataUltimaLeitura,
+                    ArraySensorId = sensor.ArraySensorId
+                }).ToList() ?? new List<SensorDto>()
             };
         }
 
@@ -70,7 +94,18 @@ namespace AshBoard.Service.Services
             {
                 Id = arraySensor.Id,
                 NomeLocal = arraySensor.NomeLocal,
-                SensoresIds = sensoresSelecionados.Select(s => s.Id).ToList()
+                Sensores = sensoresSelecionados.Select(sensor => new SensorDto
+                {
+                    Id = sensor.Id,
+                    NomeLocal = sensor.NomeLocal,
+                    Latitude = sensor.Latitude,
+                    Longitude = sensor.Longitude,
+                    Temperatura = sensor.Temperatura,
+                    NivelCO2 = sensor.NivelCO2,
+                    DirecaoVento = sensor.DirecaoVento,
+                    DataUltimaLeitura = sensor.DataUltimaLeitura,
+                    ArraySensorId = sensor.ArraySensorId
+                }).ToList()
             };
         }
 
@@ -81,7 +116,6 @@ namespace AshBoard.Service.Services
 
             existing.NomeLocal = dto.NomeLocal;
             await _arraySensorRepository.UpdateAsync(existing);
-
             return true;
         }
 

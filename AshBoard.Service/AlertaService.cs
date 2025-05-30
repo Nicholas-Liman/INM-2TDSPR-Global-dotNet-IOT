@@ -9,10 +9,12 @@ namespace AshBoard.Service.Services
     public class AlertaService : IAlertaService
     {
         private readonly AshBoardDbContext _context;
+        private readonly IAlertaMLService _mlService;
 
-        public AlertaService(AshBoardDbContext context)
+        public AlertaService(AshBoardDbContext context, IAlertaMLService mlService)
         {
             _context = context;
+            _mlService = mlService;
         }
 
         public async Task<List<AlertaDto>> GetAllAsync()
@@ -58,6 +60,18 @@ namespace AshBoard.Service.Services
 
         public async Task<AlertaDto> CreateAsync(CreateAlertaDto dto)
         {
+            string? observacao = dto.Observacao;
+
+            if (dto.Gravidade == "Amarelo")
+            {
+                var probabilidade = _mlService.ObterProbabilidadeIncendio(dto.Temperatura, dto.NivelCO2);
+                observacao = $"Chance de Incêndio: {probabilidade:F1}%";
+            }
+            else if (dto.Gravidade == "Vermelho")
+            {
+                observacao = "Chance de Incêndio: 100%";
+            }
+
             var alerta = new Alerta
             {
                 DataHoraColeta = dto.DataHoraColeta,
@@ -67,7 +81,7 @@ namespace AshBoard.Service.Services
                 Evento = dto.Evento,
                 Gravidade = dto.Gravidade,
                 SensorId = dto.SensorId,
-                Observacao = dto.Observacao
+                Observacao = observacao
             };
 
             _context.Alertas.Add(alerta);

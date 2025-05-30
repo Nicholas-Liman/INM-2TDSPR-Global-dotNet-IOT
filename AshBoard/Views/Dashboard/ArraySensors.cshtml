@@ -1,35 +1,100 @@
-﻿@model List<AshBoard.Application.DTOs.ArraySensor.ArraySensorDto>
-@{
+﻿@{
     ViewData["Title"] = "Arrays de Sensores";
 }
 
-<h2>Arrays de Sensores</h2>
+<h2 class="mb-4">Arrays de Sensores</h2>
 
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nome do Local</th>
-            <th>IDs dos Sensores</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var array in Model)
-        {
+<div class="mb-3">
+    <form class="d-flex gap-2">
+        <input type="text" id="filtroId" class="form-control w-25" placeholder="Filtrar por ID do Array">
+        <input type="text" id="filtroNome" class="form-control w-50" placeholder="Filtrar por Nome do Local">
+        <button type="button" class="btn btn-primary" onclick="aplicarFiltro()">Filtrar</button>
+        <button type="button" class="btn btn-secondary" onclick="limparFiltro()">Limpar</button>
+    </form>
+</div>
+
+<div class="table-responsive shadow rounded">
+    <table id="tabelaArrays" class="table table-bordered table-striped align-middle">
+        <thead class="table-dark text-center">
             <tr>
-                <td>@array.Id</td>
-                <td>@array.NomeLocal</td>
-                <td>
-                    @if (array.SensoresIds != null && array.SensoresIds.Any())
-                    {
-                        @string.Join(", ", array.SensoresIds)
-                    }
-                    else
-                    {
-                        <span>Nenhum sensor vinculado</span>
-                    }
-                </td>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Sensores</th>
+                <th>Ações</th>
             </tr>
+        </thead>
+        <tbody>
+            <!-- preenchido via JS -->
+        </tbody>
+    </table>
+</div>
+
+@section Scripts {
+    <script>
+        let arraysOriginais = [];
+
+        function atualizarTabela() {
+            fetch('/Dashboard/ObterArraysJson')
+                .then(resp => resp.json())
+                .then(data => {
+                    arraysOriginais = data;
+                    renderizarTabela(data);
+                })
+                .catch(error => {
+                    console.error("Erro ao buscar os dados dos arrays:", error);
+                });
         }
-    </tbody>
-</table>
+
+        function aplicarFiltro() {
+            const idFiltro = document.getElementById('filtroId').value.trim();
+            const nomeFiltro = document.getElementById('filtroNome').value.trim().toLowerCase();
+
+            const filtrados = arraysOriginais.filter(array =>
+                (idFiltro === '' || array.id.toString().includes(idFiltro)) &&
+                (nomeFiltro === '' || array.nome.toLowerCase().includes(nomeFiltro))
+            );
+
+            renderizarTabela(filtrados);
+        }
+
+        function limparFiltro() {
+            document.getElementById('filtroId').value = '';
+            document.getElementById('filtroNome').value = '';
+            renderizarTabela(arraysOriginais);
+        }
+
+        function renderizarTabela(arrays) {
+            const tbody = document.querySelector("#tabelaArrays tbody");
+            tbody.innerHTML = "";
+
+            arrays.forEach(array => {
+                const sensoresHtml = array.sensores?.length > 0
+                    ? array.sensores.map(s => `
+                        <div class="border rounded p-2 mb-1">
+                            <strong>${s.nomeLocal}</strong><br>
+                            Temp: ${s.temperatura?.toFixed(1) ?? "—"}°C |
+                            CO₂: ${s.nivelCO2?.toFixed(1) ?? "—"} ppm<br>
+                            Última: ${s.dataUltimaLeitura ? new Date(s.dataUltimaLeitura).toLocaleString() : "—"}
+                        </div>
+                    `).join("")
+                    : "<span class='text-muted'>Nenhum sensor vinculado</span>";
+
+                const linha = `
+                    <tr>
+                        <td class="text-center">${array.id}</td>
+                        <td class="text-start">${array.nome}</td>
+                        <td>${sensoresHtml}</td>
+                        <td class="text-center">
+                            <a href="/Dashboard/EditArray/${array.id}" class="btn btn-warning btn-sm">Editar</a>
+                            <a href="/Dashboard/DeleteArray/${array.id}" class="btn btn-danger btn-sm" onclick="return confirm('Deseja remover este array?');">Excluir</a>
+                        </td>
+                    </tr>
+                `;
+                tbody.innerHTML += linha;
+            });
+        }
+
+        atualizarTabela();               // primeira carga
+        setInterval(atualizarTabela, 5000);  // atualiza a cada 5s
+    </script>
+}

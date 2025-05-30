@@ -1,0 +1,88 @@
+﻿@{
+    ViewData["Title"] = "Lista de Alertas";
+    var gravidadeFiltro = Context.Request.Query["gravidade"].ToString();
+}
+
+<h2 class="mb-3">Lista de Alertas</h2>
+
+<form method="get" class="mb-3">
+    <label for="gravidade" class="form-label">Filtrar por Gravidade:</label>
+    <div class="input-group w-25">
+        <select name="gravidade" id="gravidade" class="form-select">
+            <option value="">Todas</option>
+            <option value="Verde" selected="@(gravidadeFiltro == "Verde")">Verde</option>
+            <option value="Amarelo" selected="@(gravidadeFiltro == "Amarelo")">Amarelo</option>
+            <option value="Vermelho" selected="@(gravidadeFiltro == "Vermelho")">Vermelho</option>
+        </select>
+        <button type="submit" class="btn btn-primary">Filtrar</button>
+    </div>
+</form>
+
+<div class="table-responsive shadow rounded">
+    <table id="tabelaAlertas" class="table table-bordered table-striped align-middle text-center">
+        <thead class="table-light">
+            <tr>
+                <th>ID</th>
+                <th>Data</th>
+                <th>Local</th>
+                <th>Sensor</th>
+                <th>Gravidade</th>
+                <th>Observação</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- será preenchido dinamicamente -->
+        </tbody>
+    </table>
+</div>
+
+@section Scripts {
+    <script>
+        function atualizarTabelaAlertas() {
+            const gravidade = '@gravidadeFiltro';
+            let url = '/Dashboard/ObterAlertasJson';
+            if (gravidade) {
+                url += '?gravidade=' + gravidade;
+            }
+
+            fetch(url)
+                .then(resp => resp.json())
+                .then(alertas => {
+                    const tbody = document.querySelector("#tabelaAlertas tbody");
+                    tbody.innerHTML = "";
+
+                    if (alertas.length === 0) {
+                        tbody.innerHTML = `<tr><td colspan="7" class="text-center text-muted">Nenhum alerta encontrado.</td></tr>`;
+                        return;
+                    }
+
+                    alertas.forEach(alerta => {
+                        const badgeClass = alerta.gravidade === "Vermelho" ? "bg-danger"
+                                        : alerta.gravidade === "Amarelo" ? "bg-warning text-dark"
+                                        : alerta.gravidade === "Verde" ? "bg-success"
+                                        : "bg-secondary";
+
+                        const linha = `
+                            <tr>
+                                <td>${alerta.id}</td>
+                                <td>${new Date(alerta.dataHoraColeta).toLocaleString()}</td>
+                                <td>${alerta.nomeLocal}</td>
+                                <td>${alerta.sensorId}</td>
+                                <td><span class="badge ${badgeClass}">${alerta.gravidade}</span></td>
+                                <td class="text-start">${alerta.observacao}</td>
+                                <td>
+                                    <form method="post" action="/Dashboard/DeleteAlerta/${alerta.id}" onsubmit="return confirm('Deseja remover este alerta?');">
+                                        <button type="submit" class="btn btn-sm btn-danger">Excluir</button>
+                                    </form>
+                                </td>
+                            </tr>`;
+                        tbody.innerHTML += linha;
+                    });
+                });
+        }
+
+        setInterval(atualizarTabelaAlertas, 5000);
+        atualizarTabelaAlertas(); // primeira carga
+    </script>
+}

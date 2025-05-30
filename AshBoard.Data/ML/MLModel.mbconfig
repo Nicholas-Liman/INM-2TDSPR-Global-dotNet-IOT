@@ -1,0 +1,260 @@
+﻿{
+  "Scenario": "Classification",
+  "DataSource": {
+    "Version": 3,
+    "EscapeCharacter": "\"",
+    "ReadMultiLines": false,
+    "KeepDiacritics": false,
+    "KeepPunctuations": false,
+    "AllowQuoting": false,
+    "Type": "TabularFile",
+    "FilePath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\dataset_incendios_contextual_limpo.csv",
+    "Delimiter": ",",
+    "DecimalMarker": ".",
+    "HasHeader": true,
+    "ColumnProperties": [
+      {
+        "ColumnName": "Temperatura",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "NivelCO2",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "TipoLocal",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "SensorErro(%)",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Incendio",
+        "ColumnPurpose": "Label",
+        "ColumnDataFormat": "Boolean",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      }
+    ]
+  },
+  "Environment": {
+    "Type": "LocalCPU",
+    "Version": 1
+  },
+  "RunHistory": {
+    "Version": 3,
+    "Type": "Result",
+    "Trials": [
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "SdcaLogisticRegressionBinary",
+        "Score": 0.92444142276035168,
+        "RuntimeInSeconds": 8.641,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2",
+          "e0": {
+            "OutputColumnNames": [
+              "Temperatura",
+              "NivelCO2"
+            ],
+            "InputColumnNames": [
+              "Temperatura",
+              "NivelCO2"
+            ]
+          },
+          "e1": {
+            "InputColumnNames": [
+              "Temperatura",
+              "NivelCO2"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e2": {
+            "L1Regularization": 2.7288597,
+            "L2Regularization": 0.26013976,
+            "LabelColumnName": "Incendio",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "SdcaLogisticRegressionBinary",
+        "Score": 0.92254514872517,
+        "RuntimeInSeconds": 8.356,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2",
+          "e0": {
+            "OutputColumnNames": [
+              "Temperatura",
+              "NivelCO2"
+            ],
+            "InputColumnNames": [
+              "Temperatura",
+              "NivelCO2"
+            ]
+          },
+          "e1": {
+            "InputColumnNames": [
+              "Temperatura",
+              "NivelCO2"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e2": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 0.1,
+            "LabelColumnName": "Incendio",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "SdcaLogisticRegressionBinary",
+        "Score": 0.92254514872517,
+        "RuntimeInSeconds": 8.688,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2",
+          "e0": {
+            "OutputColumnNames": [
+              "Temperatura",
+              "NivelCO2"
+            ],
+            "InputColumnNames": [
+              "Temperatura",
+              "NivelCO2"
+            ]
+          },
+          "e1": {
+            "InputColumnNames": [
+              "Temperatura",
+              "NivelCO2"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e2": {
+            "L1Regularization": 0.34467033,
+            "L2Regularization": 0.2113675,
+            "LabelColumnName": "Incendio",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "SdcaLogisticRegressionBinary",
+        "Score": 0.92101259413747061,
+        "RuntimeInSeconds": 7.81,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2",
+          "e0": {
+            "OutputColumnNames": [
+              "Temperatura",
+              "NivelCO2"
+            ],
+            "InputColumnNames": [
+              "Temperatura",
+              "NivelCO2"
+            ]
+          },
+          "e1": {
+            "InputColumnNames": [
+              "Temperatura",
+              "NivelCO2"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e2": {
+            "L1Regularization": 0.36645344,
+            "L2Regularization": 0.038440876,
+            "LabelColumnName": "Incendio",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "SdcaLogisticRegressionBinary",
+        "Score": 0.91079053946210764,
+        "RuntimeInSeconds": 8.7,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2",
+          "e0": {
+            "OutputColumnNames": [
+              "Temperatura",
+              "NivelCO2"
+            ],
+            "InputColumnNames": [
+              "Temperatura",
+              "NivelCO2"
+            ]
+          },
+          "e1": {
+            "InputColumnNames": [
+              "Temperatura",
+              "NivelCO2"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e2": {
+            "L1Regularization": 21.605211,
+            "L2Regularization": 0.32016605,
+            "LabelColumnName": "Incendio",
+            "FeatureColumnName": "Features"
+          }
+        }
+      }
+    ],
+    "Estimators": {
+      "e0": "ReplaceMissingValues",
+      "e1": "Concatenate",
+      "e2": "SdcaLogisticRegressionBinary"
+    },
+    "Schema": "e0 * e1 * e2",
+    "MetricName": "F1",
+    "ModelFilePath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Data\\ML\\MLModel.mlnet"
+  },
+  "Type": "TrainingConfig",
+  "Version": 5,
+  "TrainingOption": {
+    "Version": 2,
+    "Subsampling": false,
+    "Tuner": "eci-cfo",
+    "Type": "ClassificationTrainingOption",
+    "TrainingTime": 60,
+    "OptimizeMetric": "F1",
+    "LabelColumn": "Incendio",
+    "AvailableTrainers": [
+      "SDCA"
+    ],
+    "ValidationOption": {
+      "Version": 0,
+      "Type": "CrossValidationValidationOption",
+      "NumberOfFolds": 5
+    }
+  }
+}

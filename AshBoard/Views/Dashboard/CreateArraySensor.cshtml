@@ -1,0 +1,19 @@
+﻿@model AshBoard.Application.DTOs.ArraySensor.CreateArraySensorDto
+
+@{
+    ViewData["Title"] = "Criar Array de Sensores";
+}
+
+<h2>Criar Novo Array de Sensores</h2>
+
+<form asp-action="CreateArraySensor" method="post" class="mt-3">
+
+    <div class="mb-3">
+        <label asp-for="NomeLocal" class="form-label">Nome do Local</label>
+        <input asp-for="NomeLocal" class="form-control" />
+        <span asp-validation-for="NomeLocal" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Salvar</button>
+    <a asp-action="ArraySensors" class="btn btn-secondary">Cancelar</a>
+</form>

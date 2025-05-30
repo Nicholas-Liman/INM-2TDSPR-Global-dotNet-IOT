@@ -1,5 +1,6 @@
 ﻿using AshBoard.Application.DTOs.Sensor;
 using AshBoard.Application.DTOs.ArraySensor;
+using AshBoard.Application.DTOs.Alerta;
 using AshBoard.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,14 +10,20 @@ namespace AshBoard.Controllers
     {
         private readonly ISensorService _sensorService;
         private readonly IArraySensorService _arraySensorService;
+        private readonly IAlertaService _alertaService;
 
-        public DashboardController(ISensorService sensorService, IArraySensorService arraySensorService)
+        public DashboardController(
+            ISensorService sensorService,
+            IArraySensorService arraySensorService,
+            IAlertaService alertaService)
         {
             _sensorService = sensorService;
             _arraySensorService = arraySensorService;
+            _alertaService = alertaService;
         }
 
-        // Lista todos os sensores ordenados por ID
+        // SENSORES
+
         public async Task<IActionResult> Index()
         {
             var sensores = await _sensorService.GetAllAsync();
@@ -24,17 +31,8 @@ namespace AshBoard.Controllers
             return View(ordenados);
         }
 
-        // Lista todos os arrays com seus sensores
-        public async Task<IActionResult> ArraySensors()
-        {
-            var arrays = await _arraySensorService.GetAllAsync();
-            return View(arrays);
-        }
-
-        // Página de criação de sensor
         public IActionResult CreateSensor() => View();
 
-        // Cria um novo sensor
         [HttpPost]
         public async Task<IActionResult> CreateSensor(CreateSensorDto dto)
         {
@@ -45,7 +43,6 @@ namespace AshBoard.Controllers
             return RedirectToAction("Index");
         }
 
-        // Página de edição
         public async Task<IActionResult> EditSensor(string id)
         {
             var sensor = await _sensorService.GetByIdAsync(id);
@@ -55,7 +52,6 @@ namespace AshBoard.Controllers
             return View(sensor);
         }
 
-        // Edita um sensor existente
         [HttpPost]
         public async Task<IActionResult> EditSensor(SensorDto dto)
         {
@@ -76,7 +72,6 @@ namespace AshBoard.Controllers
             return RedirectToAction("Index");
         }
 
-        // Deleta um sensor
         public async Task<IActionResult> DeleteSensor(string id)
         {
             var success = await _sensorService.DeleteAsync(id);
@@ -84,6 +79,122 @@ namespace AshBoard.Controllers
                 return NotFound();
 
             return RedirectToAction("Index");
+        }
+
+        // ARRAYS DE SENSORES
+
+        public async Task<IActionResult> ArraySensors()
+        {
+            var arrays = await _arraySensorService.GetAllAsync();
+            return View(arrays);
+        }
+
+        [HttpGet]
+        public IActionResult CreateArraySensor()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateArraySensor(CreateArraySensorDto dto)
+        {
+            if (!ModelState.IsValid)
+                return View(dto);
+
+            await _arraySensorService.CreateAsync(dto);
+            return RedirectToAction("ArraySensors");
+        }
+
+        public async Task<IActionResult> DeleteArraySensor(int id)
+        {
+            var success = await _arraySensorService.DeleteAsync(id);
+            if (!success)
+                return NotFound();
+
+            return RedirectToAction("ArraySensors");
+        }
+
+        // ALERTAS
+
+        public async Task<IActionResult> Alertas(string? gravidade)
+        {
+            var alertas = await _alertaService.GetAllAsync();
+
+            if (!string.IsNullOrWhiteSpace(gravidade))
+                alertas = alertas
+                    .Where(a => a.Gravidade.Equals(gravidade, StringComparison.OrdinalIgnoreCase))
+                    .ToList();
+
+            return View("Alertas", alertas);
+        }
+
+        [HttpGet]
+        public IActionResult CreateAlerta()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateAlerta(CreateAlertaDto dto)
+        {
+            if (!ModelState.IsValid)
+                return View(dto);
+
+            await _alertaService.CreateAsync(dto);
+            return RedirectToAction("Alertas");
+        }
+
+        public async Task<IActionResult> DeleteAlerta(int id)
+        {
+            var success = await _alertaService.DeleteAsync(id);
+            if (!success)
+                return NotFound();
+
+            return RedirectToAction("Alertas");
+        }
+
+        // JSON endpoints para atualizações em tempo real
+
+        [HttpGet]
+        public async Task<IActionResult> ObterSensoresJson()
+        {
+            var sensores = await _sensorService.GetAllAsync();
+            return Json(sensores);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> ObterAlertasJson(string? gravidade)
+        {
+            var alertas = await _alertaService.GetAllAsync();
+
+            if (!string.IsNullOrWhiteSpace(gravidade))
+                alertas = alertas
+                    .Where(a => a.Gravidade.Equals(gravidade, StringComparison.OrdinalIgnoreCase))
+                    .ToList();
+
+            return Json(alertas.OrderByDescending(a => a.DataHoraColeta));
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> ObterArraysJson()
+        {
+            var arrays = await _arraySensorService.GetAllAsync();
+
+            var result = arrays.Select(a => new
+            {
+                a.Id,
+                Nome = a.NomeLocal,
+                Sensores = a.Sensores.Select(s => new
+                {
+                    s.Id,
+                    s.NomeLocal,
+                    s.Temperatura,
+                    s.NivelCO2,
+                    s.DataUltimaLeitura
+                })
+            });
+
+            return Json(result);
         }
     }
 }

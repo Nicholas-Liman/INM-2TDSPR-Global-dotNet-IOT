@@ -1,4 +1,6 @@
-﻿namespace AshBoard.Application.DTOs.Alerta
+﻿using System;
+
+namespace AshBoard.Application.DTOs.Alerta
 {
     public class CreateAlertaDto
     {
@@ -10,5 +12,9 @@
         public string Gravidade { get; set; } = "Verde";
         public string SensorId { get; set; } = string.Empty;
         public string? Observacao { get; set; }
+
+        // Campos adicionais para uso com o modelo ML.NET
+        public float Temperatura { get; set; }
+        public float NivelCO2 { get; set; }
     }
 }

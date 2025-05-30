@@ -701,10 +701,10 @@
             "type": "string",
             "nullable": true
           },
-          "sensoresIds": {
+          "sensores": {
             "type": "array",
             "items": {
-              "type": "string"
+              "$ref": "#/components/schemas/SensorDto"
             },
             "nullable": true
           }
@@ -745,6 +745,14 @@
           "observacao": {
             "type": "string",
             "nullable": true
+          },
+          "temperatura": {
+            "type": "number",
+            "format": "float"
+          },
+          "nivelCO2": {
+            "type": "number",
+            "format": "float"
           }
         },
         "additionalProperties": false

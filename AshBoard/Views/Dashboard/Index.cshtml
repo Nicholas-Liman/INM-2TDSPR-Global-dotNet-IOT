@@ -1,35 +1,62 @@
-﻿@model List<AshBoard.Application.DTOs.Sensor.SensorDto>
-@{
+﻿@{
     ViewData["Title"] = "Sensores";
 }
 
-<h2>Lista de Sensores</h2>
+<h2 class="mb-4">Sensores</h2>
 
-<a href="@Url.Action("CreateSensor", "Dashboard")" class="btn btn-success mb-3">Adicionar Novo Sensor</a>
+<a class="btn btn-primary mb-3" asp-controller="Dashboard" asp-action="CreateSensor">Novo Sensor</a>
 
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nome do Local</th>
-            <th>Latitude</th>
-            <th>Longitude</th>
-            <th>Ações</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var s in Model)
-        {
+<div class="table-responsive shadow rounded">
+    <table id="tabelaSensores" class="table table-bordered table-striped align-middle text-center">
+        <thead class="table-dark">
             <tr>
-                <td>@s.Id</td>
-                <td>@s.NomeLocal</td>
-                <td>@s.Latitude</td>
-                <td>@s.Longitude</td>
-                <td>
-                    <a class="btn btn-primary btn-sm" href="@Url.Action("EditSensor", "Dashboard", new { id = s.Id })">Editar</a>
-                    <a class="btn btn-danger btn-sm" href="@Url.Action("DeleteSensor", "Dashboard", new { id = s.Id })">Excluir</a>
-                </td>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>Temperatura (°C)</th>
+                <th>Nível de CO₂ (ppm)</th>
+                <th>Última Leitura</th>
+                <th>Ações</th>
             </tr>
+        </thead>
+        <tbody>
+            <!-- será preenchido dinamicamente -->
+        </tbody>
+    </table>
+</div>
+
+@section Scripts {
+    <script>
+        function atualizarTabela() {
+            fetch('/Dashboard/ObterSensoresJson')
+                .then(resp => resp.json())
+                .then(sensores => {
+                    const tbody = document.querySelector("#tabelaSensores tbody");
+                    tbody.innerHTML = "";
+
+                    sensores.forEach(sensor => {
+                        const linha = `
+                            <tr>
+                                <td>${sensor.id}</td>
+                                <td class="text-start">${sensor.nomeLocal}</td>
+                                <td>${sensor.latitude.toFixed(6)}</td>
+                                <td>${sensor.longitude.toFixed(6)}</td>
+                                <td>${sensor.temperatura !== null ? sensor.temperatura.toFixed(1) : "—"}</td>
+                                <td>${sensor.nivelCO2 !== null ? sensor.nivelCO2.toFixed(1) : "—"}</td>
+                                <td>${sensor.dataUltimaLeitura ? new Date(sensor.dataUltimaLeitura).toLocaleString() : "—"}</td>
+                                <td>
+                                    <a class="btn btn-sm btn-warning" href="/Dashboard/EditSensor/${sensor.id}">Editar</a>
+                                    <a class="btn btn-sm btn-danger" href="/Dashboard/DeleteSensor/${sensor.id}" onclick="return confirm('Deseja remover este sensor?');">Excluir</a>
+                                </td>
+                            </tr>
+                        `;
+                        tbody.innerHTML += linha;
+                    });
+                });
         }
-    </tbody>
-</table>
+
+        setInterval(atualizarTabela, 5000); // a cada 5 segundos
+        atualizarTabela(); // carregar inicialmente
+    </script>
+}

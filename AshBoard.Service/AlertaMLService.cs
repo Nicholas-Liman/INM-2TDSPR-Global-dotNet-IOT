@@ -7,18 +7,24 @@ namespace AshBoard.Service.Services
     {
         public float ObterProbabilidadeIncendio(float temperatura, float co2)
         {
-            var input = new ModelInput
+            try
             {
-                Temperatura = temperatura,
-                NivelCO2 = co2
-            };
+                var input = new ModelInput
+                {
+                    Temperatura = temperatura,
+                    NivelCO2 = co2
+                };
 
-            var prediction = Predict(input);
+                var prediction = Predict(input);
 
-            if (prediction.Score != null && prediction.Score.Length >= 2)
-                return prediction.Score[1]; // probabilidade de incêndio
-            else
+                // Arredonda para 2 casas decimais
+                return (float)Math.Round(prediction.Probability * 100f, 2);
+            }
+            catch
+            {
+                // Em caso de erro de predição, retorna 0
                 return 0f;
+            }
         }
     }
 }
