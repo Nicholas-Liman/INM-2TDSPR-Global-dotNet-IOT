@@ -37,11 +37,11 @@
     <div class="row">
         <div class="col-md-6 mb-3">
             <label asp-for="Temperatura" class="form-label">Temperatura (°C)</label>
-            <input asp-for="Temperatura" class="form-control" />
+            <input asp-for="Temperatura" class="form-control" id="temperaturaInput" />
         </div>
         <div class="col-md-6 mb-3">
             <label asp-for="NivelCO2" class="form-label">Nível de CO2 (ppm)</label>
-            <input asp-for="NivelCO2" class="form-control" />
+            <input asp-for="NivelCO2" class="form-control" id="co2Input" />
         </div>
     </div>
 
@@ -56,9 +56,44 @@
 
     <div class="mb-3">
         <label asp-for="Observacao" class="form-label">Observação</label>
-        <textarea asp-for="Observacao" class="form-control"></textarea>
+        <textarea asp-for="Observacao" class="form-control" rows="3"></textarea>
+    </div>
+
+    <div class="alert alert-info" id="probabilidadeDisplay" style="display:none;">
+        <strong>Probabilidade de Incêndio:</strong> <span id="valorProbabilidade"></span>%
     </div>
 
     <button type="submit" class="btn btn-success">Salvar</button>
     <a asp-action="Alertas" class="btn btn-secondary">Cancelar</a>
 </form>
+
+@section Scripts {
+    <script>
+        async function atualizarProbabilidade() {
+            const temp = parseFloat(document.getElementById("temperaturaInput").value);
+            const co2 = parseFloat(document.getElementById("co2Input").value);
+
+            if (!isNaN(temp) && !isNaN(co2)) {
+                try {
+                    const response = await fetch(`/api/predict?temperatura=${temp}&co2=${co2}`);
+                    if (response.ok) {
+                        const data = await response.json();
+                        const prob = (data.probabilidade || 0).toFixed(2);
+                        document.getElementById("valorProbabilidade").innerText = prob;
+                        document.getElementById("probabilidadeDisplay").style.display = "block";
+                    } else {
+                        document.getElementById("probabilidadeDisplay").style.display = "none";
+                    }
+                } catch (e) {
+                    console.warn("Erro ao consultar predição:", e);
+                    document.getElementById("probabilidadeDisplay").style.display = "none";
+                }
+            } else {
+                document.getElementById("probabilidadeDisplay").style.display = "none";
+            }
+        }
+
+        document.getElementById("temperaturaInput").addEventListener("input", atualizarProbabilidade);
+        document.getElementById("co2Input").addEventListener("input", atualizarProbabilidade);
+    </script>
+}

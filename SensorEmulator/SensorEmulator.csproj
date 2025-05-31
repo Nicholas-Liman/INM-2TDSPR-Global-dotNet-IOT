@@ -8,11 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Castle.Core" Version="5.2.1" />
+    <PackageReference Include="Moq" Version="4.20.72" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="8.1.2" />
+    <PackageReference Include="xunit" Version="2.9.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\AshBoard.Application\AshBoard.Application.csproj" />
+    <ProjectReference Include="..\AshBoard.Data\AshBoard.Data.csproj" />
     <ProjectReference Include="..\AshBoard.Domain\AshBoard.Domain.csproj" />
   </ItemGroup>
 

@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "VBGLzJWEItU=",
+  "dgSpecHash": "JL/2RGyxxyI=",
   "success": true,
   "projectFilePath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Tests\\AshBoard.Tests.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Nicho\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
+    "C:\\Users\\Nicho\\.nuget\\packages\\castle.core\\5.2.1\\castle.core.5.2.1.nupkg.sha512",
     "C:\\Users\\Nicho\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.5\\microsoft.aspnetcore.openapi.9.0.5.nupkg.sha512",
     "C:\\Users\\Nicho\\.nuget\\packages\\microsoft.entityframeworkcore\\9.0.5\\microsoft.entityframeworkcore.9.0.5.nupkg.sha512",
     "C:\\Users\\Nicho\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\9.0.5\\microsoft.entityframeworkcore.abstractions.9.0.5.nupkg.sha512",
@@ -24,7 +24,6 @@
     "C:\\Users\\Nicho\\.nuget\\packages\\microsoft.ml\\4.0.2\\microsoft.ml.4.0.2.nupkg.sha512",
     "C:\\Users\\Nicho\\.nuget\\packages\\microsoft.ml.cpumath\\4.0.2\\microsoft.ml.cpumath.4.0.2.nupkg.sha512",
     "C:\\Users\\Nicho\\.nuget\\packages\\microsoft.ml.dataview\\4.0.2\\microsoft.ml.dataview.4.0.2.nupkg.sha512",
-    "C:\\Users\\Nicho\\.nuget\\packages\\microsoft.ml.fasttree\\4.0.2\\microsoft.ml.fasttree.4.0.2.nupkg.sha512",
     "C:\\Users\\Nicho\\.nuget\\packages\\microsoft.openapi\\1.6.23\\microsoft.openapi.1.6.23.nupkg.sha512",
     "C:\\Users\\Nicho\\.nuget\\packages\\moq\\4.20.72\\moq.4.20.72.nupkg.sha512",
     "C:\\Users\\Nicho\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
@@ -53,8 +52,7 @@
     "C:\\Users\\Nicho\\.nuget\\packages\\xunit.assert\\2.9.3\\xunit.assert.2.9.3.nupkg.sha512",
     "C:\\Users\\Nicho\\.nuget\\packages\\xunit.core\\2.9.3\\xunit.core.2.9.3.nupkg.sha512",
     "C:\\Users\\Nicho\\.nuget\\packages\\xunit.extensibility.core\\2.9.3\\xunit.extensibility.core.2.9.3.nupkg.sha512",
-    "C:\\Users\\Nicho\\.nuget\\packages\\xunit.extensibility.execution\\2.9.3\\xunit.extensibility.execution.2.9.3.nupkg.sha512",
-    "C:\\Users\\Nicho\\.nuget\\packages\\xunit.runner.visualstudio\\3.1.0\\xunit.runner.visualstudio.3.1.0.nupkg.sha512"
+    "C:\\Users\\Nicho\\.nuget\\packages\\xunit.extensibility.execution\\2.9.3\\xunit.extensibility.execution.2.9.3.nupkg.sha512"
   ],
   "logs": []
 }

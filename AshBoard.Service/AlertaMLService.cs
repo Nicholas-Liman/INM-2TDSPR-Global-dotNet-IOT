@@ -9,22 +9,24 @@ namespace AshBoard.Service.Services
         {
             try
             {
-                var input = new ModelInput
+                var resultado = Predict(temperatura, co2);
+
+                if (resultado == null)
                 {
-                    Temperatura = temperatura,
-                    NivelCO2 = co2
-                };
+                    Console.WriteLine("⚠️ Predição retornou null.");
+                    return 0f;
+                }
 
-                var prediction = Predict(input);
+                Console.WriteLine($"[ML DEBUG] Resultado: Label={resultado.PredictedLabel}, Prob={resultado.Probability}, Score={resultado.Score}");
 
-                // Arredonda para 2 casas decimais
-                return (float)Math.Round(prediction.Probability * 100f, 2);
+                return (float)Math.Round(resultado.Probability * 100f, 2);
             }
-            catch
+            catch (Exception ex)
             {
-                // Em caso de erro de predição, retorna 0
+                Console.WriteLine($"❌ Erro na predição: {ex.Message}");
                 return 0f;
             }
         }
     }
+
 }

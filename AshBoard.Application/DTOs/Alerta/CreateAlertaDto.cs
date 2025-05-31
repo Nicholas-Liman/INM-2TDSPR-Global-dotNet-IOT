@@ -13,8 +13,10 @@ namespace AshBoard.Application.DTOs.Alerta
         public string SensorId { get; set; } = string.Empty;
         public string? Observacao { get; set; }
 
-        // Campos adicionais para uso com o modelo ML.NET
+        // ML.NET
         public float Temperatura { get; set; }
         public float NivelCO2 { get; set; }
+        public float ProbabilidadeIncendio { get; set; }
     }
+
 }

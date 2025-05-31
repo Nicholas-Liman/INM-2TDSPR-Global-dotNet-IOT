@@ -1,0 +1,14 @@
+D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\AshBoard.Domain\bin\Debug\net9.0\AshBoard.Domain.deps.json
+D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\AshBoard.Domain\bin\Debug\net9.0\AshBoard.Domain.runtimeconfig.json
+D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\AshBoard.Domain\bin\Debug\net9.0\AshBoard.Domain.dll
+D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\AshBoard.Domain\bin\Debug\net9.0\AshBoard.Domain.pdb
+D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\AshBoard.Domain\obj\Debug\net9.0\AshBoard.Domain.csproj.AssemblyReference.cache
+D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\AshBoard.Domain\obj\Debug\net9.0\AshBoard.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\AshBoard.Domain\obj\Debug\net9.0\AshBoard.Domain.AssemblyInfoInputs.cache
+D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\AshBoard.Domain\obj\Debug\net9.0\AshBoard.Domain.AssemblyInfo.cs
+D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\AshBoard.Domain\obj\Debug\net9.0\AshBoard.Domain.csproj.CoreCompileInputs.cache
+D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\AshBoard.Domain\obj\Debug\net9.0\AshBoard.Domain.dll
+D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\AshBoard.Domain\obj\Debug\net9.0\refint\AshBoard.Domain.dll
+D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\AshBoard.Domain\obj\Debug\net9.0\AshBoard.Domain.pdb
+D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\AshBoard.Domain\obj\Debug\net9.0\AshBoard.Domain.genruntimeconfig.cache
+D:\Downloads\INM-2TDSPR-Global-dotNet-IOT-main\AshBoard.Domain\obj\Debug\net9.0\ref\AshBoard.Domain.dll

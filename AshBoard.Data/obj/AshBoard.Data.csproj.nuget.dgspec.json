@@ -54,6 +54,10 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "Castle.Core": {
+              "target": "Package",
+              "version": "[5.2.1, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[9.0.5, )"
@@ -62,9 +66,17 @@
               "target": "Package",
               "version": "[4.0.2, )"
             },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.72, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[8.1.2, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.9.3, )"
             }
           },
           "imports": [
@@ -140,6 +152,10 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "Castle.Core": {
+              "target": "Package",
+              "version": "[5.2.1, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[9.0.5, )"
@@ -154,9 +170,9 @@
               "target": "Package",
               "version": "[9.0.5, )"
             },
-            "Microsoft.ML.FastTree": {
+            "Moq": {
               "target": "Package",
-              "version": "[4.0.2, )"
+              "version": "[4.20.72, )"
             },
             "Oracle.EntityFrameworkCore": {
               "target": "Package",
@@ -165,6 +181,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[8.1.2, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.9.3, )"
             }
           },
           "imports": [
@@ -233,13 +253,25 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "Castle.Core": {
+              "target": "Package",
+              "version": "[5.2.1, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[9.0.5, )"
             },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.72, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[8.1.2, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.9.3, )"
             }
           },
           "imports": [

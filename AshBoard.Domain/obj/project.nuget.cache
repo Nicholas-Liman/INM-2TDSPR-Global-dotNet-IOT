@@ -1,16 +1,26 @@
 {
   "version": 2,
-  "dgSpecHash": "w/wLlBwmGy0=",
+  "dgSpecHash": "ealCcdOoCQc=",
   "success": true,
   "projectFilePath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Domain\\AshBoard.Domain.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Nicho\\.nuget\\packages\\castle.core\\5.2.1\\castle.core.5.2.1.nupkg.sha512",
     "C:\\Users\\Nicho\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.5\\microsoft.aspnetcore.openapi.9.0.5.nupkg.sha512",
     "C:\\Users\\Nicho\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\Nicho\\.nuget\\packages\\microsoft.openapi\\1.6.23\\microsoft.openapi.1.6.23.nupkg.sha512",
+    "C:\\Users\\Nicho\\.nuget\\packages\\moq\\4.20.72\\moq.4.20.72.nupkg.sha512",
     "C:\\Users\\Nicho\\.nuget\\packages\\swashbuckle.aspnetcore\\8.1.2\\swashbuckle.aspnetcore.8.1.2.nupkg.sha512",
     "C:\\Users\\Nicho\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\8.1.2\\swashbuckle.aspnetcore.swagger.8.1.2.nupkg.sha512",
     "C:\\Users\\Nicho\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\8.1.2\\swashbuckle.aspnetcore.swaggergen.8.1.2.nupkg.sha512",
-    "C:\\Users\\Nicho\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\8.1.2\\swashbuckle.aspnetcore.swaggerui.8.1.2.nupkg.sha512"
+    "C:\\Users\\Nicho\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\8.1.2\\swashbuckle.aspnetcore.swaggerui.8.1.2.nupkg.sha512",
+    "C:\\Users\\Nicho\\.nuget\\packages\\system.diagnostics.eventlog\\6.0.0\\system.diagnostics.eventlog.6.0.0.nupkg.sha512",
+    "C:\\Users\\Nicho\\.nuget\\packages\\xunit\\2.9.3\\xunit.2.9.3.nupkg.sha512",
+    "C:\\Users\\Nicho\\.nuget\\packages\\xunit.abstractions\\2.0.3\\xunit.abstractions.2.0.3.nupkg.sha512",
+    "C:\\Users\\Nicho\\.nuget\\packages\\xunit.analyzers\\1.18.0\\xunit.analyzers.1.18.0.nupkg.sha512",
+    "C:\\Users\\Nicho\\.nuget\\packages\\xunit.assert\\2.9.3\\xunit.assert.2.9.3.nupkg.sha512",
+    "C:\\Users\\Nicho\\.nuget\\packages\\xunit.core\\2.9.3\\xunit.core.2.9.3.nupkg.sha512",
+    "C:\\Users\\Nicho\\.nuget\\packages\\xunit.extensibility.core\\2.9.3\\xunit.extensibility.core.2.9.3.nupkg.sha512",
+    "C:\\Users\\Nicho\\.nuget\\packages\\xunit.extensibility.execution\\2.9.3\\xunit.extensibility.execution.2.9.3.nupkg.sha512"
   ],
   "logs": []
 }

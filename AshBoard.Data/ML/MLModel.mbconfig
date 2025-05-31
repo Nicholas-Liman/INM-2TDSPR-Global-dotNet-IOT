@@ -30,22 +30,6 @@
         "Version": 5
       },
       {
-        "ColumnName": "TipoLocal",
-        "ColumnPurpose": "Ignore",
-        "ColumnDataFormat": "String",
-        "IsCategorical": false,
-        "Type": "Column",
-        "Version": 5
-      },
-      {
-        "ColumnName": "SensorErro(%)",
-        "ColumnPurpose": "Ignore",
-        "ColumnDataFormat": "Single",
-        "IsCategorical": false,
-        "Type": "Column",
-        "Version": 5
-      },
-      {
         "ColumnName": "Incendio",
         "ColumnPurpose": "Label",
         "ColumnDataFormat": "Boolean",
@@ -67,8 +51,8 @@
         "Version": 1,
         "Type": "Trial",
         "TrainerName": "SdcaLogisticRegressionBinary",
-        "Score": 0.92444142276035168,
-        "RuntimeInSeconds": 8.641,
+        "Score": 0.74536651173367585,
+        "RuntimeInSeconds": 4.49,
         "Parameter": {
           "_SCHEMA_": "e0 * e1 * e2",
           "e0": {
@@ -89,8 +73,8 @@
             "OutputColumnName": "Features"
           },
           "e2": {
-            "L1Regularization": 2.7288597,
-            "L2Regularization": 0.26013976,
+            "L1Regularization": 0.52825737,
+            "L2Regularization": 0.03125,
             "LabelColumnName": "Incendio",
             "FeatureColumnName": "Features"
           }
@@ -100,8 +84,8 @@
         "Version": 1,
         "Type": "Trial",
         "TrainerName": "SdcaLogisticRegressionBinary",
-        "Score": 0.92254514872517,
-        "RuntimeInSeconds": 8.356,
+        "Score": 0.74536651173367585,
+        "RuntimeInSeconds": 4.678,
         "Parameter": {
           "_SCHEMA_": "e0 * e1 * e2",
           "e0": {
@@ -122,8 +106,8 @@
             "OutputColumnName": "Features"
           },
           "e2": {
-            "L1Regularization": 1.0,
-            "L2Regularization": 0.1,
+            "L1Regularization": 0.03125,
+            "L2Regularization": 0.053953134,
             "LabelColumnName": "Incendio",
             "FeatureColumnName": "Features"
           }
@@ -133,8 +117,8 @@
         "Version": 1,
         "Type": "Trial",
         "TrainerName": "SdcaLogisticRegressionBinary",
-        "Score": 0.92254514872517,
-        "RuntimeInSeconds": 8.688,
+        "Score": 0.74536651173367585,
+        "RuntimeInSeconds": 4.478,
         "Parameter": {
           "_SCHEMA_": "e0 * e1 * e2",
           "e0": {
@@ -155,8 +139,8 @@
             "OutputColumnName": "Features"
           },
           "e2": {
-            "L1Regularization": 0.34467033,
-            "L2Regularization": 0.2113675,
+            "L1Regularization": 11.390889,
+            "L2Regularization": 0.03125,
             "LabelColumnName": "Incendio",
             "FeatureColumnName": "Features"
           }
@@ -166,8 +150,8 @@
         "Version": 1,
         "Type": "Trial",
         "TrainerName": "SdcaLogisticRegressionBinary",
-        "Score": 0.92101259413747061,
-        "RuntimeInSeconds": 7.81,
+        "Score": 0.74536651173367585,
+        "RuntimeInSeconds": 4.306,
         "Parameter": {
           "_SCHEMA_": "e0 * e1 * e2",
           "e0": {
@@ -188,8 +172,8 @@
             "OutputColumnName": "Features"
           },
           "e2": {
-            "L1Regularization": 0.36645344,
-            "L2Regularization": 0.038440876,
+            "L1Regularization": 2.2062247,
+            "L2Regularization": 0.03125,
             "LabelColumnName": "Incendio",
             "FeatureColumnName": "Features"
           }
@@ -199,8 +183,8 @@
         "Version": 1,
         "Type": "Trial",
         "TrainerName": "SdcaLogisticRegressionBinary",
-        "Score": 0.91079053946210764,
-        "RuntimeInSeconds": 8.7,
+        "Score": 0.74536651173367585,
+        "RuntimeInSeconds": 4.322,
         "Parameter": {
           "_SCHEMA_": "e0 * e1 * e2",
           "e0": {
@@ -221,8 +205,8 @@
             "OutputColumnName": "Features"
           },
           "e2": {
-            "L1Regularization": 21.605211,
-            "L2Regularization": 0.32016605,
+            "L1Regularization": 0.25045958,
+            "L2Regularization": 0.03125,
             "LabelColumnName": "Incendio",
             "FeatureColumnName": "Features"
           }
@@ -235,7 +219,7 @@
       "e2": "SdcaLogisticRegressionBinary"
     },
     "Schema": "e0 * e1 * e2",
-    "MetricName": "F1",
+    "MetricName": "AUC",
     "ModelFilePath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Data\\ML\\MLModel.mlnet"
   },
   "Type": "TrainingConfig",
@@ -245,8 +229,8 @@
     "Subsampling": false,
     "Tuner": "eci-cfo",
     "Type": "ClassificationTrainingOption",
-    "TrainingTime": 60,
-    "OptimizeMetric": "F1",
+    "TrainingTime": 180,
+    "OptimizeMetric": "AUC",
     "LabelColumn": "Incendio",
     "AvailableTrainers": [
       "SDCA"

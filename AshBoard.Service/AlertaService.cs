@@ -34,7 +34,10 @@ namespace AshBoard.Service.Services
                 Evento = alerta.Evento,
                 Gravidade = alerta.Gravidade,
                 SensorId = alerta.SensorId,
-                Observacao = alerta.Observacao
+                Observacao = alerta.Observacao,
+                Temperatura = alerta.Temperatura,
+                NivelCO2 = alerta.NivelCO2,
+                ProbabilidadeIncendio = alerta.ProbabilidadeIncendio
             }).ToList();
         }
 
@@ -54,21 +57,26 @@ namespace AshBoard.Service.Services
                 Evento = alerta.Evento,
                 Gravidade = alerta.Gravidade,
                 SensorId = alerta.SensorId,
-                Observacao = alerta.Observacao
+                Observacao = alerta.Observacao,
+                Temperatura = alerta.Temperatura,
+                NivelCO2 = alerta.NivelCO2,
+                ProbabilidadeIncendio = alerta.ProbabilidadeIncendio
             };
         }
 
         public async Task<AlertaDto> CreateAsync(CreateAlertaDto dto)
         {
+            float probabilidade = 0f;
             string? observacao = dto.Observacao;
 
             if (dto.Gravidade == "Amarelo")
             {
-                var probabilidade = _mlService.ObterProbabilidadeIncendio(dto.Temperatura, dto.NivelCO2);
+                probabilidade = _mlService.ObterProbabilidadeIncendio(dto.Temperatura, dto.NivelCO2);
                 observacao = $"Chance de Incêndio: {probabilidade:F1}%";
             }
             else if (dto.Gravidade == "Vermelho")
             {
+                probabilidade = 100f;
                 observacao = "Chance de Incêndio: 100%";
             }
 
@@ -81,7 +89,10 @@ namespace AshBoard.Service.Services
                 Evento = dto.Evento,
                 Gravidade = dto.Gravidade,
                 SensorId = dto.SensorId,
-                Observacao = observacao
+                Observacao = observacao,
+                Temperatura = dto.Temperatura,
+                NivelCO2 = dto.NivelCO2,
+                ProbabilidadeIncendio = probabilidade
             };
 
             _context.Alertas.Add(alerta);
@@ -97,7 +108,10 @@ namespace AshBoard.Service.Services
                 Evento = alerta.Evento,
                 Gravidade = alerta.Gravidade,
                 SensorId = alerta.SensorId,
-                Observacao = alerta.Observacao
+                Observacao = alerta.Observacao,
+                Temperatura = alerta.Temperatura,
+                NivelCO2 = alerta.NivelCO2,
+                ProbabilidadeIncendio = alerta.ProbabilidadeIncendio
             };
         }
 

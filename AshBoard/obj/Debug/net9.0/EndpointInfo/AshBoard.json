@@ -683,6 +683,18 @@
             "type": "string",
             "nullable": true
           },
+          "temperatura": {
+            "type": "number",
+            "format": "float"
+          },
+          "nivelCO2": {
+            "type": "number",
+            "format": "float"
+          },
+          "probabilidadeIncendio": {
+            "type": "number",
+            "format": "float"
+          },
           "observacao": {
             "type": "string",
             "nullable": true
@@ -753,6 +765,10 @@
           "nivelCO2": {
             "type": "number",
             "format": "float"
+          },
+          "probabilidadeIncendio": {
+            "type": "number",
+            "format": "float"
           }
         },
         "additionalProperties": false
@@ -805,11 +821,11 @@
           },
           "temperatura": {
             "type": "number",
-            "format": "double"
+            "format": "float"
           },
           "nivelCO2": {
             "type": "number",
-            "format": "double"
+            "format": "float"
           },
           "direcaoVento": {
             "type": "string",

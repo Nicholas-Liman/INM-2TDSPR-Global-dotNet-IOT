@@ -27,7 +27,7 @@
                 <th>Local</th>
                 <th>Sensor</th>
                 <th>Gravidade</th>
-                <th>Observação</th>
+                <th>Probabilidade</th>
                 <th>Ações</th>
             </tr>
         </thead>
@@ -63,6 +63,10 @@
                                         : alerta.gravidade === "Verde" ? "bg-success"
                                         : "bg-secondary";
 
+                        const probFormatada = alerta.probabilidadeIncendio != null
+                            ? `${alerta.probabilidadeIncendio.toFixed(1)}%`
+                            : "N/A";
+
                         const linha = `
                             <tr>
                                 <td>${alerta.id}</td>
@@ -70,7 +74,7 @@
                                 <td>${alerta.nomeLocal}</td>
                                 <td>${alerta.sensorId}</td>
                                 <td><span class="badge ${badgeClass}">${alerta.gravidade}</span></td>
-                                <td class="text-start">${alerta.observacao}</td>
+                                <td>Chance de Incêndio: ${probFormatada}</td>
                                 <td>
                                     <form method="post" action="/Dashboard/DeleteAlerta/${alerta.id}" onsubmit="return confirm('Deseja remover este alerta?');">
                                         <button type="submit" class="btn btn-sm btn-danger">Excluir</button>

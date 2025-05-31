@@ -9,10 +9,12 @@ namespace AshBoard.Service.Services
     public class SensorService : ISensorService
     {
         private readonly ISensorRepository _sensorRepository;
+        private readonly IAlertaMLService _alertaMLService;
 
-        public SensorService(ISensorRepository sensorRepository)
+        public SensorService(ISensorRepository sensorRepository, IAlertaMLService alertaMLService)
         {
             _sensorRepository = sensorRepository;
+            _alertaMLService = alertaMLService;
         }
 
         public async Task<List<SensorDto>> GetAllAsync()
@@ -109,6 +111,11 @@ namespace AshBoard.Service.Services
             sensor.NivelCO2 = dto.NivelCO2;
             sensor.DirecaoVento = dto.DirecaoVento;
             sensor.DataUltimaLeitura = dto.DataHora;
+
+            float probabilidade = _alertaMLService.ObterProbabilidadeIncendio(
+                (float)dto.Temperatura, (float)dto.NivelCO2);
+
+            Console.WriteLine($" Predição do AlertaMLService para sensor {id}: {probabilidade}%");
 
             await _sensorRepository.UpdateAsync(sensor);
             return true;

@@ -47,6 +47,9 @@ namespace AshBoard.Data.Migrations
                     b.Property<double>("Longitude")
                         .HasColumnType("BINARY_DOUBLE");
 
+                    b.Property<float>("NivelCO2")
+                        .HasColumnType("BINARY_FLOAT");
+
                     b.Property<string>("NomeLocal")
                         .IsRequired()
                         .HasColumnType("NVARCHAR2(2000)");
@@ -54,9 +57,15 @@ namespace AshBoard.Data.Migrations
                     b.Property<string>("Observacao")
                         .HasColumnType("NVARCHAR2(2000)");
 
+                    b.Property<float>("ProbabilidadeIncendio")
+                        .HasColumnType("BINARY_FLOAT");
+
                     b.Property<string>("SensorId")
                         .IsRequired()
                         .HasColumnType("NVARCHAR2(450)");
+
+                    b.Property<float>("Temperatura")
+                        .HasColumnType("BINARY_FLOAT");
 
                     b.HasKey("Id");
 

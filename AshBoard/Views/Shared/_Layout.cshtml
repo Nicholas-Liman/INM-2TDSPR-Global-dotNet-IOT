@@ -10,42 +10,55 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
         <div class="container-fluid">
-            <a class="navbar-brand" asp-controller="Dashboard" asp-action="Index">AshBoard</a>
+            <!-- Logo -->
+            <a class="navbar-brand" href="@Url.Action("Index", "Dashboard")">AshBoard</a>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
+            <!-- Menu principal -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <!-- Sensores -->
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="Dashboard" asp-action="Index">Sensores</a>
+                        <a class="nav-link" href="/Dashboard">Sensores</a>
+
                     </li>
+
+                    <!-- Arrays -->
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="Dashboard" asp-action="ArraySensors">Arrays de Sensores</a>
+                        <a class="nav-link" href="@Url.Action("ArraySensors", "Dashboard")">Arrays de Sensores</a>
                     </li>
+
+                    <!-- Alertas -->
                     <li class="nav-item">
-                        <a class="nav-link" asp-controller="Dashboard" asp-action="Alertas">Alertas</a>
+                        <a class="nav-link" href="@Url.Action("Alertas", "Dashboard")">Alertas</a>
                     </li>
                 </ul>
+
+                <!-- Botões de criação -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link text-success" asp-controller="Dashboard" asp-action="CreateSensor">+ Sensor</a>
+                        <a class="nav-link text-success" href="@Url.Action("CreateSensor", "Dashboard")">+ Sensor</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-success" asp-controller="Dashboard" asp-action="CreateArraySensor">+ Array</a>
+                        <a class="nav-link text-success" href="@Url.Action("CreateArraySensor", "Dashboard")">+ Array</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-success" asp-controller="Dashboard" asp-action="CreateAlerta">+ Alerta</a>
+                        <a class="nav-link text-success" href="@Url.Action("CreateAlerta", "Dashboard")">+ Alerta</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <!-- Conteúdo da página -->
     <div class="container">
         @RenderBody()
     </div>
 
+    <!-- Rodapé -->
     <footer class="border-top text-center text-muted small py-3 mt-4">
         AshBoard &copy; @DateTime.Now.Year
     </footer>

@@ -12,7 +12,6 @@
         public double? NivelCO2 { get; set; }
         public string? DirecaoVento { get; set; }
         public DateTime? DataUltimaLeitura { get; set; }
-
         public int? ArraySensorId { get; set; }
     }
 }

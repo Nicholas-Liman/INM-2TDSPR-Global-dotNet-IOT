@@ -172,7 +172,17 @@ namespace AshBoard.Controllers
                     .Where(a => a.Gravidade.Equals(gravidade, StringComparison.OrdinalIgnoreCase))
                     .ToList();
 
-            return Json(alertas.OrderByDescending(a => a.DataHoraColeta));
+            return Json(alertas
+                .OrderByDescending(a => a.DataHoraColeta)
+                .Select(a => new {
+                    a.Id,
+                    a.DataHoraColeta,
+                    a.NomeLocal,
+                    a.SensorId,
+                    a.Gravidade,
+                    a.ProbabilidadeIncendio,
+                    a.Observacao
+                }));
         }
 
         [HttpGet]

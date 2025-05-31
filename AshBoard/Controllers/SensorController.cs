@@ -95,7 +95,7 @@ namespace AshBoard.Presentation.Controllers
             return Ok($"Sensor {id} removido com sucesso.");
         }
 
-        // ✅ NOVO ENDPOINT: PUT /api/sensor/{id}/leitura
+        // PUT: /api/sensor/{id}/leitura
         [HttpPut("{id}/leitura")]
         [SwaggerOperation(Summary = "Atualizar leitura do sensor")]
         [SwaggerResponse(200, "Leitura atualizada com sucesso")]

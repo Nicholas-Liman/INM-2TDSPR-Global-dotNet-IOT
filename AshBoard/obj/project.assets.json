@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net9.0": {
-      "Castle.Core/5.1.1": {
+      "Castle.Core/5.2.1": {
         "type": "package",
         "dependencies": {
           "System.Diagnostics.EventLog": "6.0.0"
@@ -889,51 +889,6 @@
           }
         }
       },
-      "Microsoft.ML.FastTree/4.0.2": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.ML": "4.0.2"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.ML.FastTree.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.ML.FastTree.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "build/netstandard2.0/Microsoft.ML.FastTree.props": {}
-        },
-        "runtimeTargets": {
-          "runtimes/linux-x64/native/libFastTreeNative.so": {
-            "assetType": "native",
-            "rid": "linux-x64"
-          },
-          "runtimes/linux-x64/native/libFastTreeNative.so.dbg": {
-            "assetType": "native",
-            "rid": "linux-x64"
-          },
-          "runtimes/osx-x64/native/libFastTreeNative.dylib": {
-            "assetType": "native",
-            "rid": "osx-x64"
-          },
-          "runtimes/osx-x64/native/libFastTreeNative.dylib.dwarf": {
-            "assetType": "native",
-            "rid": "osx-x64"
-          },
-          "runtimes/win-x64/native/FastTreeNative.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x86/native/FastTreeNative.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          }
-        }
-      },
       "Microsoft.OpenApi/1.6.23": {
         "type": "package",
         "compile": {
@@ -1512,22 +1467,6 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "System.Threading.RateLimiting/9.0.5": {
-        "type": "package",
-        "compile": {
-          "lib/net9.0/System.Threading.RateLimiting.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net9.0/System.Threading.RateLimiting.dll": {
-            "related": ".xml"
-          }
-        },
-        "build": {
-          "buildTransitive/net8.0/_._": {}
-        }
-      },
       "xunit/2.9.3": {
         "type": "package",
         "dependencies": {
@@ -1617,9 +1556,12 @@
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
           "AshBoard.Domain": "1.0.0",
+          "Castle.Core": "5.2.1",
           "Microsoft.AspNetCore.OpenApi": "9.0.5",
           "Microsoft.ML": "4.0.2",
-          "Swashbuckle.AspNetCore": "8.1.2"
+          "Moq": "4.20.72",
+          "Swashbuckle.AspNetCore": "8.1.2",
+          "xunit": "2.9.3"
         },
         "compile": {
           "bin/placeholder/AshBoard.Application.dll": {}
@@ -1634,11 +1576,13 @@
         "dependencies": {
           "AshBoard.Application": "1.0.0",
           "AshBoard.Domain": "1.0.0",
+          "Castle.Core": "5.2.1",
           "Microsoft.AspNetCore.OpenApi": "9.0.5",
           "Microsoft.EntityFrameworkCore": "9.0.5",
-          "Microsoft.ML.FastTree": "4.0.2",
+          "Moq": "4.20.72",
           "Oracle.EntityFrameworkCore": "9.23.80",
-          "Swashbuckle.AspNetCore": "8.1.2"
+          "Swashbuckle.AspNetCore": "8.1.2",
+          "xunit": "2.9.3"
         },
         "compile": {
           "bin/placeholder/AshBoard.Data.dll": {}
@@ -1651,8 +1595,11 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
+          "Castle.Core": "5.2.1",
           "Microsoft.AspNetCore.OpenApi": "9.0.5",
-          "Swashbuckle.AspNetCore": "8.1.2"
+          "Moq": "4.20.72",
+          "Swashbuckle.AspNetCore": "8.1.2",
+          "xunit": "2.9.3"
         },
         "compile": {
           "bin/placeholder/AshBoard.Domain.dll": {}
@@ -1668,11 +1615,14 @@
           "AshBoard.Application": "1.0.0",
           "AshBoard.Data": "1.0.0",
           "AshBoard.Domain": "1.0.0",
+          "Castle.Core": "5.2.1",
           "Microsoft.AspNetCore.OpenApi": "9.0.5",
           "Microsoft.EntityFrameworkCore": "9.0.5",
           "Microsoft.ML": "4.0.2",
+          "Moq": "4.20.72",
           "Oracle.EntityFrameworkCore": "9.23.80",
-          "Swashbuckle.AspNetCore": "8.1.2"
+          "Swashbuckle.AspNetCore": "8.1.2",
+          "xunit": "2.9.3"
         },
         "compile": {
           "bin/placeholder/AshBoard.Service.dll": {}
@@ -1689,11 +1639,11 @@
           "AshBoard.Data": "1.0.0",
           "AshBoard.Domain": "1.0.0",
           "AshBoard.Service": "1.0.0",
+          "Castle.Core": "5.2.1",
           "Microsoft.EntityFrameworkCore.InMemory": "9.0.5",
           "Moq": "4.20.72",
           "Swashbuckle.AspNetCore": "8.1.2",
-          "xunit": "2.9.3",
-          "xunit.abstractions": "2.0.3"
+          "xunit": "2.9.3"
         },
         "compile": {
           "bin/placeholder/AshBoard.Tests.dll": {}
@@ -1705,10 +1655,10 @@
     }
   },
   "libraries": {
-    "Castle.Core/5.1.1": {
-      "sha512": "rpYtIczkzGpf+EkZgDr9CClTdemhsrwA/W5hMoPjLkRFnXzH44zDLoovXeKtmxb1ykXK9aJVODSpiJml8CTw2g==",
+    "Castle.Core/5.2.1": {
+      "sha512": "wHARzQA695jwwKreOzNsq54KiGqKP38tv8hi8e2FXDEC/sA6BtrX90tVPDkOfVu13PbEzr00TCV8coikl+D1Iw==",
       "type": "package",
-      "path": "castle.core/5.1.1",
+      "path": "castle.core/5.2.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1716,7 +1666,7 @@
         "CHANGELOG.md",
         "LICENSE",
         "castle-logo.png",
-        "castle.core.5.1.1.nupkg.sha512",
+        "castle.core.5.2.1.nupkg.sha512",
         "castle.core.nuspec",
         "lib/net462/Castle.Core.dll",
         "lib/net462/Castle.Core.xml",
@@ -3529,30 +3479,6 @@
         "mlnetlogo.png"
       ]
     },
-    "Microsoft.ML.FastTree/4.0.2": {
-      "sha512": "a/1kEgAqGakxE5DZCh9Xk4XJeyjaowUV4JpgZW6LJAQvufRp/4ZHAUDXJE4T1sOHoFzWsmPeBqDAlzlAgKH6Eg==",
-      "type": "package",
-      "path": "microsoft.ml.fasttree/4.0.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE",
-        "PACKAGE.md",
-        "THIRD-PARTY-NOTICES.TXT",
-        "build/netstandard2.0/Microsoft.ML.FastTree.props",
-        "lib/netstandard2.0/Microsoft.ML.FastTree.dll",
-        "lib/netstandard2.0/Microsoft.ML.FastTree.xml",
-        "microsoft.ml.fasttree.4.0.2.nupkg.sha512",
-        "microsoft.ml.fasttree.nuspec",
-        "mlnetlogo.png",
-        "runtimes/linux-x64/native/libFastTreeNative.so",
-        "runtimes/linux-x64/native/libFastTreeNative.so.dbg",
-        "runtimes/osx-x64/native/libFastTreeNative.dylib",
-        "runtimes/osx-x64/native/libFastTreeNative.dylib.dwarf",
-        "runtimes/win-x64/native/FastTreeNative.dll",
-        "runtimes/win-x86/native/FastTreeNative.dll"
-      ]
-    },
     "Microsoft.OpenApi/1.6.23": {
       "sha512": "tZ1I0KXnn98CWuV8cpI247A17jaY+ILS9vvF7yhI0uPPEqF4P1d7BWL5Uwtel10w9NucllHB3nTkfYTAcHAh8g==",
       "type": "package",
@@ -4523,34 +4449,6 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Threading.RateLimiting/9.0.5": {
-      "sha512": "DeRRl4kz5jgQsa6XJ4tBUFkYlFvHMD2zmcOl5XUF11uvmrxNj6CxdayMsb1WOrcORCmifvAg9kby9+LPzwE1uw==",
-      "type": "package",
-      "path": "system.threading.ratelimiting/9.0.5",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "PACKAGE.md",
-        "THIRD-PARTY-NOTICES.TXT",
-        "buildTransitive/net461/System.Threading.RateLimiting.targets",
-        "buildTransitive/net462/_._",
-        "buildTransitive/net8.0/_._",
-        "buildTransitive/netcoreapp2.0/System.Threading.RateLimiting.targets",
-        "lib/net462/System.Threading.RateLimiting.dll",
-        "lib/net462/System.Threading.RateLimiting.xml",
-        "lib/net8.0/System.Threading.RateLimiting.dll",
-        "lib/net8.0/System.Threading.RateLimiting.xml",
-        "lib/net9.0/System.Threading.RateLimiting.dll",
-        "lib/net9.0/System.Threading.RateLimiting.xml",
-        "lib/netstandard2.0/System.Threading.RateLimiting.dll",
-        "lib/netstandard2.0/System.Threading.RateLimiting.xml",
-        "system.threading.ratelimiting.9.0.5.nupkg.sha512",
-        "system.threading.ratelimiting.nuspec",
-        "useSharedDesignerContext.txt"
-      ]
-    },
     "xunit/2.9.3": {
       "sha512": "TlXQBinK35LpOPKHAqbLY4xlEen9TBafjs0V5KnA4wZsoQLQJiirCR4CbIXvOH8NzkW4YeJKP5P/Bnrodm0h9Q==",
       "type": "package",
@@ -4703,14 +4601,14 @@
       "AshBoard.Domain >= 1.0.0",
       "AshBoard.Service >= 1.0.0",
       "AshBoard.Tests >= 1.0.0",
+      "Castle.Core >= 5.2.1",
       "Microsoft.AspNetCore.OpenApi >= 9.0.5",
       "Microsoft.EntityFrameworkCore.Tools >= 9.0.5",
       "Microsoft.ML >= 4.0.2",
-      "Microsoft.ML.FastTree >= 4.0.2",
+      "Moq >= 4.20.72",
       "Oracle.EntityFrameworkCore >= 9.23.80",
       "Swashbuckle.AspNetCore >= 8.1.2",
       "Swashbuckle.AspNetCore.Annotations >= 8.1.2",
-      "System.Threading.RateLimiting >= 9.0.5",
       "xunit >= 2.9.3"
     ]
   },
@@ -4780,6 +4678,10 @@
       "net9.0": {
         "targetAlias": "net9.0",
         "dependencies": {
+          "Castle.Core": {
+            "target": "Package",
+            "version": "[5.2.1, )"
+          },
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
             "version": "[9.0.5, )"
@@ -4794,9 +4696,9 @@
             "target": "Package",
             "version": "[4.0.2, )"
           },
-          "Microsoft.ML.FastTree": {
+          "Moq": {
             "target": "Package",
-            "version": "[4.0.2, )"
+            "version": "[4.20.72, )"
           },
           "Oracle.EntityFrameworkCore": {
             "target": "Package",
@@ -4809,10 +4711,6 @@
           "Swashbuckle.AspNetCore.Annotations": {
             "target": "Package",
             "version": "[8.1.2, )"
-          },
-          "System.Threading.RateLimiting": {
-            "target": "Package",
-            "version": "[9.0.5, )"
           },
           "xunit": {
             "target": "Package",
