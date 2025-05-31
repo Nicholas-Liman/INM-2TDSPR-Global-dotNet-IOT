@@ -13,6 +13,10 @@
     </form>
 </div>
 
+<div class="mb-3">
+    <a href="/Dashboard/CreateArraySensor" class="btn btn-success">+ Novo Array</a>
+</div>
+
 <div class="table-responsive shadow rounded">
     <table id="tabelaArrays" class="table table-bordered table-striped align-middle">
         <thead class="table-dark text-center">
@@ -85,8 +89,7 @@
                         <td class="text-start">${array.nome}</td>
                         <td>${sensoresHtml}</td>
                         <td class="text-center">
-                            <a href="/Dashboard/EditArray/${array.id}" class="btn btn-warning btn-sm">Editar</a>
-                            <a href="/Dashboard/DeleteArray/${array.id}" class="btn btn-danger btn-sm" onclick="return confirm('Deseja remover este array?');">Excluir</a>
+                            <a href="/Dashboard/DeleteArraySensor/${array.id}" class="btn btn-danger btn-sm" onclick="return confirm('Deseja remover este array?');">Excluir</a>
                         </td>
                     </tr>
                 `;
@@ -94,7 +97,7 @@
             });
         }
 
-        atualizarTabela();               // primeira carga
-        setInterval(atualizarTabela, 5000);  // atualiza a cada 5s
+        atualizarTabela();
+        setInterval(atualizarTabela, 5000);
     </script>
 }

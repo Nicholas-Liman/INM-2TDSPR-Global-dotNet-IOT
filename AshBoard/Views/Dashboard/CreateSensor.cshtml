@@ -1,23 +1,36 @@
 ﻿@model AshBoard.Application.DTOs.Sensor.CreateSensorDto
+
 @{
     ViewData["Title"] = "Criar Sensor";
 }
 
-<h2>Novo Sensor</h2>
+<h2 class="mb-4">Novo Sensor</h2>
 
-<form asp-action="CreateSensor" method="post">
-    <div class="form-group">
-        <label asp-for="NomeLocal"></label>
-        <input asp-for="NomeLocal" class="form-control" />
+<form asp-action="CreateSensor" method="post" class="shadow p-4 rounded bg-light">
+    <div class="mb-3">
+        <label asp-for="Id" class="form-label">ID do Sensor</label>
+        <input asp-for="Id" class="form-control" placeholder="Ex: Sensor-1" />
+        <span asp-validation-for="Id" class="text-danger"></span>
     </div>
-    <div class="form-group">
-        <label asp-for="Latitude"></label>
-        <input asp-for="Latitude" class="form-control" />
+
+    <div class="mb-3">
+        <label asp-for="NomeLocal" class="form-label">Nome do Local</label>
+        <input asp-for="NomeLocal" class="form-control" placeholder="Ex: Parque Vila Lobos - Portão 3" />
+        <span asp-validation-for="NomeLocal" class="text-danger"></span>
     </div>
-    <div class="form-group">
-        <label asp-for="Longitude"></label>
-        <input asp-for="Longitude" class="form-control" />
+
+    <div class="mb-3">
+        <label asp-for="Latitude" class="form-label">Latitude</label>
+        <input asp-for="Latitude" class="form-control" placeholder="Ex: -23.512" />
+        <span asp-validation-for="Latitude" class="text-danger"></span>
     </div>
-    <button type="submit" class="btn btn-success mt-2">Salvar</button>
-    <a href="@Url.Action("Index", "Dashboard")" class="btn btn-secondary mt-2">Cancelar</a>
+
+    <div class="mb-3">
+        <label asp-for="Longitude" class="form-label">Longitude</label>
+        <input asp-for="Longitude" class="form-control" placeholder="Ex: -46.623" />
+        <span asp-validation-for="Longitude" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Salvar</button>
+    <a asp-action="Index" asp-controller="Dashboard" class="btn btn-secondary ms-2">Cancelar</a>
 </form>

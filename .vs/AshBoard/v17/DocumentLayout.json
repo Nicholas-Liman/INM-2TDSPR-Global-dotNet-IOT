@@ -1,40 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{066B07DF-74B7-49E3-9581-60F9FA854A7A}|AshBoard\\AshBoard.csproj|d:\\downloads\\inm-2tdspr-global-dotnet-iot-main\\ashboard\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{066B07DF-74B7-49E3-9581-60F9FA854A7A}|AshBoard\\AshBoard.csproj|solutionrelative:ashboard\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{066B07DF-74B7-49E3-9581-60F9FA854A7A}|AshBoard\\AshBoard.csproj|d:\\downloads\\inm-2tdspr-global-dotnet-iot-main\\ashboard\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{066B07DF-74B7-49E3-9581-60F9FA854A7A}|AshBoard\\AshBoard.csproj|solutionrelative:ashboard\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{066B07DF-74B7-49E3-9581-60F9FA854A7A}|AshBoard\\AshBoard.csproj|d:\\downloads\\inm-2tdspr-global-dotnet-iot-main\\ashboard\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{066B07DF-74B7-49E3-9581-60F9FA854A7A}|AshBoard\\AshBoard.csproj|solutionrelative:ashboard\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{066B07DF-74B7-49E3-9581-60F9FA854A7A}|AshBoard\\AshBoard.csproj|d:\\downloads\\inm-2tdspr-global-dotnet-iot-main\\ashboard\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{066B07DF-74B7-49E3-9581-60F9FA854A7A}|AshBoard\\AshBoard.csproj|solutionrelative:ashboard\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{066B07DF-74B7-49E3-9581-60F9FA854A7A}|AshBoard\\AshBoard.csproj|d:\\downloads\\inm-2tdspr-global-dotnet-iot-main\\ashboard\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{066B07DF-74B7-49E3-9581-60F9FA854A7A}|AshBoard\\AshBoard.csproj|solutionrelative:ashboard\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{066B07DF-74B7-49E3-9581-60F9FA854A7A}|AshBoard\\AshBoard.csproj|d:\\downloads\\inm-2tdspr-global-dotnet-iot-main\\ashboard\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{066B07DF-74B7-49E3-9581-60F9FA854A7A}|AshBoard\\AshBoard.csproj|solutionrelative:ashboard\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{066B07DF-74B7-49E3-9581-60F9FA854A7A}|AshBoard\\AshBoard.csproj|d:\\downloads\\inm-2tdspr-global-dotnet-iot-main\\ashboard\\controllers\\sensorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{066B07DF-74B7-49E3-9581-60F9FA854A7A}|AshBoard\\AshBoard.csproj|solutionrelative:ashboard\\controllers\\sensorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{066B07DF-74B7-49E3-9581-60F9FA854A7A}|AshBoard\\AshBoard.csproj|d:\\downloads\\inm-2tdspr-global-dotnet-iot-main\\ashboard\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{066B07DF-74B7-49E3-9581-60F9FA854A7A}|AshBoard\\AshBoard.csproj|solutionrelative:ashboard\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -42,111 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard\\Views\\Dashboard\\Index.cshtml",
-              "RelativeDocumentMoniker": "AshBoard\\Views\\Dashboard\\Index.cshtml",
-              "ToolTip": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard\\Views\\Dashboard\\Index.cshtml",
-              "RelativeToolTip": "AshBoard\\Views\\Dashboard\\Index.cshtml",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAswCYAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-31T05:44:03.752Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "_ViewStart.cshtml",
-              "DocumentMoniker": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard\\Views\\_ViewStart.cshtml",
-              "RelativeDocumentMoniker": "AshBoard\\Views\\_ViewStart.cshtml",
-              "ToolTip": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard\\Views\\_ViewStart.cshtml",
-              "RelativeToolTip": "AshBoard\\Views\\_ViewStart.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-31T04:22:42.835Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard\\Views\\_ViewImports.cshtml",
-              "RelativeDocumentMoniker": "AshBoard\\Views\\_ViewImports.cshtml",
-              "ToolTip": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard\\Views\\_ViewImports.cshtml",
-              "RelativeToolTip": "AshBoard\\Views\\_ViewImports.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-31T04:22:40.916Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "SensorController.cs",
-              "DocumentMoniker": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard\\Controllers\\SensorController.cs",
-              "RelativeDocumentMoniker": "AshBoard\\Controllers\\SensorController.cs",
-              "ToolTip": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard\\Controllers\\SensorController.cs",
-              "RelativeToolTip": "AshBoard\\Controllers\\SensorController.cs",
-              "ViewState": "AgIAAE8AAAAAAAAAAAAgwHAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-31T04:21:44.963Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard\\Program.cs",
-              "RelativeDocumentMoniker": "AshBoard\\Program.cs",
-              "ToolTip": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard\\Program.cs",
-              "RelativeToolTip": "AshBoard\\Program.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAwwEYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-31T04:21:01.827Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DashboardController.cs",
-              "DocumentMoniker": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard\\Controllers\\DashboardController.cs",
-              "RelativeDocumentMoniker": "AshBoard\\Controllers\\DashboardController.cs",
-              "ToolTip": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard\\Controllers\\DashboardController.cs",
-              "RelativeToolTip": "AshBoard\\Controllers\\DashboardController.cs",
-              "ViewState": "AgIAALAAAAAAAAAAAAAowNIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-31T04:14:09.8Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "AshBoard\\Properties\\launchSettings.json",
-              "ToolTip": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard\\Properties\\launchSettings.json",
-              "RelativeToolTip": "AshBoard\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-31T04:13:13.492Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "AshBoard\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "AshBoard\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-31T04:10:14.19Z",
-              "EditorCaption": ""
             }
           ]
         }

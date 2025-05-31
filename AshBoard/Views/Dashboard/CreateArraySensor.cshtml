@@ -1,19 +1,58 @@
-﻿@model AshBoard.Application.DTOs.ArraySensor.CreateArraySensorDto
-
-@{
+﻿@{
     ViewData["Title"] = "Criar Array de Sensores";
 }
 
 <h2>Criar Novo Array de Sensores</h2>
 
-<form asp-action="CreateArraySensor" method="post" class="mt-3">
-
+<form id="arrayForm" class="mt-3">
     <div class="mb-3">
-        <label asp-for="NomeLocal" class="form-label">Nome do Local</label>
-        <input asp-for="NomeLocal" class="form-control" />
-        <span asp-validation-for="NomeLocal" class="text-danger"></span>
+        <label for="nomeLocal" class="form-label">Nome do Local</label>
+        <input id="nomeLocal" name="nomeLocal" class="form-control" placeholder="Ex: Parque Vila Lobos" />
     </div>
 
-    <button type="submit" class="btn btn-success">Salvar</button>
-    <a asp-action="ArraySensors" class="btn btn-secondary">Cancelar</a>
+    <div class="mb-3">
+        <label for="sensorIds" class="form-label">IDs dos Sensores</label>
+        <textarea id="sensorIds" name="sensorIds" class="form-control" rows="4" placeholder="Ex: Sensor-1&#10Sensor-2&#10Sensor-3"></textarea>
+        <small class="form-text text-muted">Insira um ID por linha.</small>
+    </div>
+
+    <button type="button" class="btn btn-success" onclick="enviarArray()">Salvar</button>
+    <a href="/Dashboard/ArraySensors" class="btn btn-secondary">Cancelar</a>
 </form>
+
+@section Scripts {
+    <script>
+        function enviarArray() {
+            const nomeLocal = document.getElementById('nomeLocal').value.trim();
+            const sensoresTexto = document.getElementById('sensorIds').value.trim();
+
+            const sensorIds = sensoresTexto
+                .split('\n')
+                .map(s => s.trim())
+                .filter(s => s.length > 0);
+
+            const payload = {
+                nomeLocal,
+                sensorIds
+            };
+
+            fetch('/api/arraysensor', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(res => {
+                if (res.ok) {
+                    window.location.href = '/Dashboard/ArraySensors';
+                } else {
+                    return res.text().then(msg => alert("Erro: " + msg));
+                }
+            })
+            .catch(err => {
+                alert("Erro ao enviar os dados: " + err.message);
+            });
+        }
+    </script>
+}

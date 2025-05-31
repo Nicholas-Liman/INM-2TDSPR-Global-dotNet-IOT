@@ -4,8 +4,11 @@
 
 <h2 class="mb-4">Sensores</h2>
 
-<a class="nav-link" asp-controller="Dashboard" asp-action="Index">Sensores</a>
-
+<div class="mb-3">
+    <a class="btn btn-success" asp-controller="Dashboard" asp-action="CreateSensor">
+        + Criar Novo Sensor
+    </a>
+</div>
 
 <div class="table-responsive shadow rounded">
     <table id="tabelaSensores" class="table table-bordered table-striped align-middle text-center">
