@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard\\AshBoard.csproj": {}
+    "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard\\AshBoard.csproj": {}
   },
   "projects": {
-    "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Application\\AshBoard.Application.csproj": {
+    "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Application\\AshBoard.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Application\\AshBoard.Application.csproj",
+        "projectUniqueName": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Application\\AshBoard.Application.csproj",
         "projectName": "AshBoard.Application",
-        "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Application\\AshBoard.Application.csproj",
+        "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Application\\AshBoard.Application.csproj",
         "packagesPath": "C:\\Users\\Nicho\\.nuget\\packages\\",
-        "outputPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Application\\obj\\",
+        "outputPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Domain\\AshBoard.Domain.csproj": {
-                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Domain\\AshBoard.Domain.csproj"
+              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Domain\\AshBoard.Domain.csproj": {
+                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Domain\\AshBoard.Domain.csproj"
               }
             }
           }
@@ -99,14 +99,14 @@
         }
       }
     },
-    "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Data\\AshBoard.Data.csproj": {
+    "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Data\\AshBoard.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Data\\AshBoard.Data.csproj",
+        "projectUniqueName": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Data\\AshBoard.Data.csproj",
         "projectName": "AshBoard.Data",
-        "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Data\\AshBoard.Data.csproj",
+        "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Data\\AshBoard.Data.csproj",
         "packagesPath": "C:\\Users\\Nicho\\.nuget\\packages\\",
-        "outputPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Data\\obj\\",
+        "outputPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -127,11 +127,11 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Application\\AshBoard.Application.csproj": {
-                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Application\\AshBoard.Application.csproj"
+              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Application\\AshBoard.Application.csproj": {
+                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Application\\AshBoard.Application.csproj"
               },
-              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Domain\\AshBoard.Domain.csproj": {
-                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Domain\\AshBoard.Domain.csproj"
+              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Domain\\AshBoard.Domain.csproj": {
+                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Domain\\AshBoard.Domain.csproj"
               }
             }
           }
@@ -207,14 +207,14 @@
         }
       }
     },
-    "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Domain\\AshBoard.Domain.csproj": {
+    "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Domain\\AshBoard.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Domain\\AshBoard.Domain.csproj",
+        "projectUniqueName": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Domain\\AshBoard.Domain.csproj",
         "projectName": "AshBoard.Domain",
-        "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Domain\\AshBoard.Domain.csproj",
+        "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Domain\\AshBoard.Domain.csproj",
         "packagesPath": "C:\\Users\\Nicho\\.nuget\\packages\\",
-        "outputPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Domain\\obj\\",
+        "outputPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -294,14 +294,14 @@
         }
       }
     },
-    "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Service\\AshBoard.Service.csproj": {
+    "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Service\\AshBoard.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Service\\AshBoard.Service.csproj",
+        "projectUniqueName": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Service\\AshBoard.Service.csproj",
         "projectName": "AshBoard.Service",
-        "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Service\\AshBoard.Service.csproj",
+        "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Service\\AshBoard.Service.csproj",
         "packagesPath": "C:\\Users\\Nicho\\.nuget\\packages\\",
-        "outputPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Service\\obj\\",
+        "outputPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -322,14 +322,14 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Application\\AshBoard.Application.csproj": {
-                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Application\\AshBoard.Application.csproj"
+              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Application\\AshBoard.Application.csproj": {
+                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Application\\AshBoard.Application.csproj"
               },
-              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Data\\AshBoard.Data.csproj": {
-                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Data\\AshBoard.Data.csproj"
+              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Data\\AshBoard.Data.csproj": {
+                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Data\\AshBoard.Data.csproj"
               },
-              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Domain\\AshBoard.Domain.csproj": {
-                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Domain\\AshBoard.Domain.csproj"
+              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Domain\\AshBoard.Domain.csproj": {
+                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Domain\\AshBoard.Domain.csproj"
               }
             }
           }
@@ -409,14 +409,14 @@
         }
       }
     },
-    "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Tests\\AshBoard.Tests.csproj": {
+    "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Tests\\AshBoard.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Tests\\AshBoard.Tests.csproj",
+        "projectUniqueName": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Tests\\AshBoard.Tests.csproj",
         "projectName": "AshBoard.Tests",
-        "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Tests\\AshBoard.Tests.csproj",
+        "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Tests\\AshBoard.Tests.csproj",
         "packagesPath": "C:\\Users\\Nicho\\.nuget\\packages\\",
-        "outputPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Tests\\obj\\",
+        "outputPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -437,17 +437,17 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Application\\AshBoard.Application.csproj": {
-                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Application\\AshBoard.Application.csproj"
+              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Application\\AshBoard.Application.csproj": {
+                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Application\\AshBoard.Application.csproj"
               },
-              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Data\\AshBoard.Data.csproj": {
-                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Data\\AshBoard.Data.csproj"
+              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Data\\AshBoard.Data.csproj": {
+                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Data\\AshBoard.Data.csproj"
               },
-              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Domain\\AshBoard.Domain.csproj": {
-                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Domain\\AshBoard.Domain.csproj"
+              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Domain\\AshBoard.Domain.csproj": {
+                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Domain\\AshBoard.Domain.csproj"
               },
-              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Service\\AshBoard.Service.csproj": {
-                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Service\\AshBoard.Service.csproj"
+              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Service\\AshBoard.Service.csproj": {
+                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Service\\AshBoard.Service.csproj"
               }
             }
           }
@@ -509,14 +509,14 @@
         }
       }
     },
-    "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard\\AshBoard.csproj": {
+    "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard\\AshBoard.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard\\AshBoard.csproj",
+        "projectUniqueName": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard\\AshBoard.csproj",
         "projectName": "AshBoard",
-        "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard\\AshBoard.csproj",
+        "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard\\AshBoard.csproj",
         "packagesPath": "C:\\Users\\Nicho\\.nuget\\packages\\",
-        "outputPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard\\obj\\",
+        "outputPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -537,20 +537,20 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Application\\AshBoard.Application.csproj": {
-                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Application\\AshBoard.Application.csproj"
+              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Application\\AshBoard.Application.csproj": {
+                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Application\\AshBoard.Application.csproj"
               },
-              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Data\\AshBoard.Data.csproj": {
-                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Data\\AshBoard.Data.csproj"
+              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Data\\AshBoard.Data.csproj": {
+                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Data\\AshBoard.Data.csproj"
               },
-              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Domain\\AshBoard.Domain.csproj": {
-                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Domain\\AshBoard.Domain.csproj"
+              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Domain\\AshBoard.Domain.csproj": {
+                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Domain\\AshBoard.Domain.csproj"
               },
-              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Service\\AshBoard.Service.csproj": {
-                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Service\\AshBoard.Service.csproj"
+              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Service\\AshBoard.Service.csproj": {
+                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Service\\AshBoard.Service.csproj"
               },
-              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Tests\\AshBoard.Tests.csproj": {
-                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\AshBoard.Tests\\AshBoard.Tests.csproj"
+              "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Tests\\AshBoard.Tests.csproj": {
+                "projectPath": "D:\\Downloads\\INM-2TDSPR-Global-dotNet-IOT-main\\Sistema de Monitoramento\\AshBoard.Tests\\AshBoard.Tests.csproj"
               }
             }
           }
