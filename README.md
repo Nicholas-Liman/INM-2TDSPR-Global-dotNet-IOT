@@ -21,6 +21,12 @@ Criar uma **API .NET escalável e inteligente** para monitoramento de sensores a
 
 ---
 
+## 🎥 Demonstração
+
+📹 [Assista no YouTube](https://youtu.be/JK3yzIlKi_M)
+
+---
+
 ## 🧱 Arquitetura
 
 O projeto segue uma arquitetura organizada em camadas:
